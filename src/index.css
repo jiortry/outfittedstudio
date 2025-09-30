@@ -118,6 +118,15 @@ All colors MUST be HSL.
     opacity: 0;
   }
   
+  .android-3d-rotate {
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+  }
+  
+  .group:hover .android-3d-rotate {
+    transform: rotateY(12deg) rotateX(6deg);
+  }
+  
   @keyframes fadeIn {
     from {
       opacity: 0;

@@ -11,7 +11,7 @@ const Index = () => {
             <img 
               src="/favicon.ico" 
               alt="Outfitted Logo" 
-              className="w-8 h-8 sm:w-10 sm:h-10"
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg"
             />
             <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">Outfitted</h1>
           </div>
@@ -46,7 +46,7 @@ const Index = () => {
               <Button 
                 size="lg"
                 disabled
-                className="bg-muted text-muted-foreground font-medium px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full cursor-not-allowed transition-all duration-300 group-hover:rotate-12 w-full sm:w-auto"
+                className="bg-muted text-muted-foreground font-medium px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full cursor-not-allowed android-3d-rotate w-full sm:w-auto"
                 aria-disabled="true"
                 aria-describedby="android-tooltip"
               >
