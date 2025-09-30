@@ -11,7 +11,7 @@ const Index = () => {
             <img 
               src="/favicon.ico" 
               alt="Outfitted Logo" 
-              className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg"
+              className="w-8 h-8 sm:w-10 sm:h-10"
             />
             <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">Outfitted</h1>
           </div>
@@ -42,35 +42,19 @@ const Index = () => {
               </a>
             </Button>
             
-            <div className="relative group w-full sm:w-auto">
-              <div className="perspective-1000 w-full h-14 sm:h-16">
-                <div className="relative w-full h-full preserve-3d transition-transform duration-500 group-hover:rotate-y-180">
-                  {/* Fronte - Android */}
-                  <div className="absolute inset-0 backface-hidden">
-                    <Button 
-                      size="lg"
-                      disabled
-                      className="bg-muted text-muted-foreground font-medium px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full cursor-not-allowed w-full"
-                      aria-disabled="true"
-                      aria-describedby="android-tooltip"
-                    >
-                      <Smartphone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                      Android
-                    </Button>
-                  </div>
-                  
-                  {/* Retro - NON DISPONIBILE */}
-                  <div className="absolute inset-0 backface-hidden rotate-y-180">
-                    <Button 
-                      size="lg"
-                      disabled
-                      className="bg-destructive text-destructive-foreground font-medium px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full cursor-not-allowed w-full"
-                      aria-disabled="true"
-                    >
-                      <span className="text-sm sm:text-base font-bold">NON DISPONIBILE</span>
-                    </Button>
-                  </div>
-                </div>
+            <div className="relative group">
+              <Button 
+                size="lg"
+                disabled
+                className="bg-muted text-muted-foreground font-medium px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full cursor-not-allowed transition-all duration-300 group-hover:rotate-12 w-full sm:w-auto"
+                aria-disabled="true"
+                aria-describedby="android-tooltip"
+              >
+                <Smartphone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                Android
+              </Button>
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-destructive text-destructive-foreground px-3 py-1 rounded-md text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap">
+                NON DISPONIBILE
               </div>
             </div>
             <span id="android-tooltip" className="sr-only">Disponibilità futura</span>
