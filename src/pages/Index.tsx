@@ -72,15 +72,16 @@ const Index = () => {
       </section>
 
       {/* Made in Italy Section */}
-      <section className="py-8 sm:py-12 px-4 sm:px-6">
-        <div className="container mx-auto max-w-6xl text-center">
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-600 via-white to-red-600 px-6 py-3 rounded-full border-2 border-white/20 shadow-lg">
-            <span className="text-green-600 font-bold text-lg">🇮🇹</span>
-            <span className="text-white font-semibold text-sm sm:text-base">Made in Italy</span>
-            <span className="text-red-600 font-bold text-lg">🇮🇹</span>
+      <section className="py-12 sm:py-16 px-4 sm:px-6">
+        <div className="container mx-auto max-w-4xl text-center">
+          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-violet-primary/10 to-teal-accent/10 backdrop-blur-sm border border-border/50 rounded-full px-6 py-3 mb-6">
+            <div className="w-2 h-2 bg-emerald rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium text-foreground">
+              🇮🇹 Progetto 100% Italiano
+            </span>
           </div>
-          <p className="text-xs sm:text-sm text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Progetto nato e sviluppato al 100% in Italia, con passione per l'innovazione e l'eccellenza italiana nel design e nella tecnologia.
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Nato dalla passione italiana per la moda e l'innovazione, Outfitted unisce il gusto estetico del Made in Italy con le più avanzate tecnologie di intelligenza artificiale.
           </p>
         </div>
       </section>
