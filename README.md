@@ -1,73 +1,38 @@
-# Welcome to your Lovable project
+# Outfitted
 
-## Project info
+**Outfitted** è l'app che rivoluziona il tuo guardaroba con l'intelligenza artificiale.
 
-**URL**: https://lovable.dev/projects/79422c98-85b0-4db5-8ef6-87839a03f963
+## Caratteristiche
 
-## How can I edit this code?
+- **Scansiona** i tuoi capi con la fotocamera
+- **Organizza** il tuo armadio digitale
+- **Ricevi suggerimenti** di outfit personalizzati per ogni occasione
 
-There are several ways of editing your application.
+## Tecnologie
 
-**Use Lovable**
+- React 18 + TypeScript
+- Vite per il build
+- Tailwind CSS per lo styling
+- Shadcn/ui per i componenti
+- React Router per la navigazione
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/79422c98-85b0-4db5-8ef6-87839a03f963) and start prompting.
+## Sviluppo Locale
 
-Changes made via Lovable will be committed automatically to this repo.
+```bash
+# Installa le dipendenze
+npm install
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Avvia il server di sviluppo
 npm run dev
+
+# Build per produzione
+npm run build
 ```
 
-**Edit a file directly in GitHub**
+## Deployment
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Il sito è configurato per essere deployato su qualsiasi piattaforma che supporti applicazioni React statiche.
 
-**Use GitHub Codespaces**
+## Licenza
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/79422c98-85b0-4db5-8ef6-87839a03f963) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+© 2025 Outfitted
