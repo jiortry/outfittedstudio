@@ -42,13 +42,35 @@ const Index = () => {
               </a>
             </Button>
             
-            <div className="android-card w-full sm:w-auto">
-              <div className="android-front px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg">
-                <Smartphone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                Android
-              </div>
-              <div className="android-back px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg">
-                <span className="text-sm sm:text-base font-bold">NON DISPONIBILE</span>
+            <div className="relative group w-full sm:w-auto">
+              <div className="relative w-full h-full perspective-1000">
+                <div className="relative w-full h-full preserve-3d transition-transform duration-500 group-hover:rotate-y-180">
+                  {/* Fronte - Android */}
+                  <div className="absolute inset-0 backface-hidden">
+                    <Button 
+                      size="lg"
+                      disabled
+                      className="bg-muted text-muted-foreground font-medium px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full cursor-not-allowed w-full"
+                      aria-disabled="true"
+                      aria-describedby="android-tooltip"
+                    >
+                      <Smartphone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                      Android
+                    </Button>
+                  </div>
+                  
+                  {/* Retro - NON DISPONIBILE */}
+                  <div className="absolute inset-0 backface-hidden rotate-y-180">
+                    <Button 
+                      size="lg"
+                      disabled
+                      className="bg-destructive text-destructive-foreground font-medium px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full cursor-not-allowed w-full"
+                      aria-disabled="true"
+                    >
+                      <span className="text-sm sm:text-base font-bold">NON DISPONIBILE</span>
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
             <span id="android-tooltip" className="sr-only">Disponibilità futura</span>
