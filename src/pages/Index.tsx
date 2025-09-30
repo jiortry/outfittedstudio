@@ -1,8 +1,26 @@
 import { Sparkles, Camera, Shirt } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import TypingAnimation from "@/components/TypingAnimation";
+import { useState, useRef, useEffect } from "react";
 
 const Index = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
+  const bubbleRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (bubbleRef.current) {
+      const rect = bubbleRef.current.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      setMousePosition({ x, y });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -74,15 +92,58 @@ const Index = () => {
       {/* Made in Italy Section */}
       <section className="py-12 sm:py-16 px-4 sm:px-6">
         <div className="container mx-auto max-w-4xl text-center">
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-violet-primary/10 to-teal-accent/10 backdrop-blur-sm border border-border/50 rounded-full px-6 py-3 mb-6">
+          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-violet-primary/10 to-teal-accent/10 backdrop-blur-sm border border-border/50 rounded-full px-6 py-3 mb-8 transition-all duration-300">
             <div className="w-2 h-2 bg-emerald rounded-full animate-pulse"></div>
             <span className="text-sm font-medium text-foreground">
               🇮🇹 Progetto 100% Italiano
             </span>
           </div>
-          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Nato dalla passione italiana per la moda e l'innovazione, Outfitted unisce il gusto estetico del Made in Italy con le più avanzate tecnologie di intelligenza artificiale.
-          </p>
+          
+          {/* Liquid Bubble */}
+          <div 
+            ref={bubbleRef}
+            onMouseMove={handleMouseMove}
+            className={`relative inline-block transition-all duration-300 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+            style={{
+              background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, 
+                hsl(var(--violet-primary) / 0.15) 0%, 
+                hsl(var(--teal-accent) / 0.1) 50%, 
+                hsl(var(--emerald) / 0.05) 100%)`,
+              borderRadius: '50% 30% 70% 40% / 30% 50% 20% 60%',
+              transition: 'border-radius 200ms ease-out, background 200ms ease-out',
+              transform: `scale(${1 + (mousePosition.x - 50) * 0.0005})`,
+            }}
+          >
+            <div 
+              className="relative z-10 px-8 py-6 text-sm sm:text-base text-muted-foreground leading-relaxed max-w-lg"
+              style={{
+                background: 'rgba(0, 0, 0, 0.02)',
+                backdropFilter: 'blur(1px)',
+                borderRadius: 'inherit',
+                transition: 'all 200ms ease-out',
+              }}
+            >
+              Nato dalla passione italiana per la moda e l'innovazione, Outfitted unisce il gusto estetico del Made in Italy con le più avanzate tecnologie di intelligenza artificiale.
+            </div>
+            
+            {/* Liquid border effect */}
+            <div 
+              className="absolute inset-0 rounded-full opacity-30"
+              style={{
+                background: `conic-gradient(from ${mousePosition.x * 3.6}deg, 
+                  hsl(var(--violet-primary) / 0.3), 
+                  hsl(var(--teal-accent) / 0.2), 
+                  hsl(var(--emerald) / 0.3), 
+                  hsl(var(--violet-primary) / 0.3))`,
+                borderRadius: 'inherit',
+                filter: 'blur(1px)',
+                transform: `rotate(${mousePosition.x * 0.5}deg)`,
+                transition: 'transform 300ms ease-out',
+              }}
+            />
+          </div>
         </div>
       </section>
 
