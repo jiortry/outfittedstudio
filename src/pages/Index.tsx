@@ -8,19 +8,13 @@ const Index = () => {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <img 
-                src="/favicon.ico" 
-                alt="Outfitted Logo" 
-                className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg"
-              />
-              <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">Outfitted</h1>
-            </div>
-            <div className="hidden sm:flex items-center gap-2 text-xs text-muted-foreground">
-              <span>🇮🇹</span>
-              <span>Made in Italy</span>
-            </div>
+          <div className="flex items-center gap-3">
+            <img 
+              src="/favicon.ico" 
+              alt="Outfitted Logo" 
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg"
+            />
+            <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">Outfitted</h1>
           </div>
         </div>
       </header>
@@ -31,16 +25,9 @@ const Index = () => {
           <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tight mb-4 sm:mb-6 leading-tight text-foreground">
             <TypingAnimation />
           </h2>
-          <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-sm sm:text-base text-muted-foreground mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
             Outfitted è l'app che rivoluziona il tuo guardaroba con l'intelligenza artificiale.
           </p>
-          
-          {/* Italian Pride Badge */}
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500/20 via-white/20 to-red-500/20 px-4 py-2 rounded-full border border-white/10 mb-8 sm:mb-12">
-            <span className="text-green-500">🇮🇹</span>
-            <span className="text-sm font-medium text-foreground">Innovazione Italiana</span>
-            <span className="text-red-500">🇮🇹</span>
-          </div>
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center animate-fade-in-delay px-4">
@@ -84,6 +71,20 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Made in Italy Section */}
+      <section className="py-8 sm:py-12 px-4 sm:px-6">
+        <div className="container mx-auto max-w-6xl text-center">
+          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-600 via-white to-red-600 px-6 py-3 rounded-full border-2 border-white/20 shadow-lg">
+            <span className="text-green-600 font-bold text-lg">🇮🇹</span>
+            <span className="text-white font-semibold text-sm sm:text-base">Made in Italy</span>
+            <span className="text-red-600 font-bold text-lg">🇮🇹</span>
+          </div>
+          <p className="text-xs sm:text-sm text-muted-foreground mt-4 max-w-2xl mx-auto">
+            Progetto nato e sviluppato al 100% in Italia, con passione per l'innovazione e l'eccellenza italiana nel design e nella tecnologia.
+          </p>
+        </div>
+      </section>
+
       {/* Come Funziona Section */}
       <section className="py-20 sm:py-32 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
@@ -119,32 +120,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Made in Italy Badge */}
-      <section className="py-8 sm:py-12 px-4 sm:px-6">
-        <div className="container mx-auto max-w-6xl text-center">
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-600 via-white to-red-600 px-6 py-3 rounded-full border-2 border-white/20 shadow-lg">
-            <span className="text-green-600 font-bold text-lg">🇮🇹</span>
-            <span className="text-white font-semibold text-sm sm:text-base">Made in Italy</span>
-            <span className="text-red-600 font-bold text-lg">🇮🇹</span>
-          </div>
-          <p className="text-xs sm:text-sm text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Progetto nato e sviluppato al 100% in Italia, con passione per l'innovazione e l'eccellenza italiana nel design e nella tecnologia.
-          </p>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="py-6 sm:py-8 px-4 sm:px-6 border-t border-border">
         <div className="container mx-auto max-w-6xl text-center">
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <span className="text-lg">🇮🇹</span>
-            <p className="text-xs sm:text-sm text-muted-foreground">
-              © 2025 Outfitted - Progetto Italiano
-            </p>
-            <span className="text-lg">🇮🇹</span>
-          </div>
-          <p className="text-xs text-muted-foreground/70">
-            Sviluppato con ❤️ in Italia
+          <p className="text-xs sm:text-sm text-muted-foreground">
+            © 2025 Outfitted
           </p>
         </div>
       </footer>
