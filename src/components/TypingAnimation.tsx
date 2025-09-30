@@ -20,11 +20,11 @@ const TypingAnimation = () => {
           setDisplayText(wrongText.slice(0, currentIndex + 1));
           currentIndex++;
         } else {
-          // Pausa breve prima di cancellare
+          // Pausa di 300ms prima di cancellare
           setTimeout(() => {
             phase = 1;
             currentIndex = wrongText.length - 1;
-          }, 500);
+          }, 300);
         }
       } else if (phase === 1) {
         // Fase 2: Cancella "LP" carattere per carattere (torna a "SCARICA L'AL")
