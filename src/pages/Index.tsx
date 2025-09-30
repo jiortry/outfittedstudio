@@ -1,4 +1,4 @@
-import { Smartphone, Sparkles, Camera, Shirt } from "lucide-react";
+import { Apple, Smartphone, Sparkles, Camera, Shirt } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
@@ -37,7 +37,7 @@ const Index = () => {
               aria-label="Scarica Outfitted per iOS"
             >
               <a href="">
-                <Smartphone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                <Apple className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 iOS
               </a>
             </Button>
@@ -50,9 +50,13 @@ const Index = () => {
                 aria-disabled="true"
               >
                 <Smartphone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                <span className="group-hover:hidden">Android</span>
-                <span className="hidden group-hover:inline text-destructive font-bold">NON DISPONIBILE</span>
+                Android
               </Button>
+              {/* Tooltip per NON DISPONIBILE */}
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1 bg-destructive text-destructive-foreground text-xs font-medium rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+                NON DISPONIBILE
+                <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-destructive rotate-45"></div>
+              </div>
             </div>
           </div>
         </div>
