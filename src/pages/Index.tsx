@@ -15,7 +15,7 @@ const Index = () => {
       <section className="pt-40 pb-32 px-6">
         <div className="container mx-auto max-w-4xl text-center animate-fade-in">
           <h2 className="text-6xl md:text-8xl font-bold tracking-tight mb-12 leading-tight text-foreground">
-            Rivoluziona il tuo guardaroba con l'AI
+            SCARICA L'APP:
           </h2>
           
           {/* CTA Buttons */}
