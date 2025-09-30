@@ -43,7 +43,7 @@ const Index = () => {
             </Button>
             
             <div className="relative group w-full sm:w-auto">
-              <div className="relative w-full h-full perspective-1000">
+              <div className="perspective-1000 w-full h-14 sm:h-16">
                 <div className="relative w-full h-full preserve-3d transition-transform duration-500 group-hover:rotate-y-180">
                   {/* Fronte - Android */}
                   <div className="absolute inset-0 backface-hidden">
