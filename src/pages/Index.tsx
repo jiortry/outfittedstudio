@@ -1,5 +1,6 @@
 import { Sparkles, Camera, Shirt } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import TypingAnimation from "@/components/TypingAnimation";
 
 const Index = () => {
   return (
@@ -22,7 +23,7 @@ const Index = () => {
       <section className="pt-32 sm:pt-40 pb-24 sm:pb-32 px-4 sm:px-6">
         <div className="container mx-auto max-w-4xl text-center animate-fade-in">
           <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tight mb-4 sm:mb-6 leading-tight text-foreground">
-            SCARICA L'APP:
+            <TypingAnimation />
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
             Outfitted è l'app che rivoluziona il tuo guardaroba con l'intelligenza artificiale.

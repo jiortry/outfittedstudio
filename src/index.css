@@ -128,4 +128,25 @@ All colors MUST be HSL.
       transform: translateY(0);
     }
   }
+  
+  /* Typing Animation */
+  .typing-animation {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .typing-cursor {
+    position: absolute;
+    right: -2px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: currentColor;
+    animation: typing-cursor 1s infinite;
+  }
+  
+  @keyframes typing-cursor {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
 }
