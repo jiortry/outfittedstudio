@@ -50,11 +50,9 @@ const Index = () => {
                 aria-disabled="true"
               >
                 <Smartphone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                Android
+                <span className="group-hover:hidden">Android</span>
+                <span className="hidden group-hover:inline text-destructive font-bold">NON DISPONIBILE</span>
               </Button>
-              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-destructive text-destructive-foreground px-3 py-1 rounded-md text-sm font-medium opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pointer-events-none whitespace-nowrap z-10">
-                NON DISPONIBILE
-              </div>
             </div>
           </div>
         </div>
