@@ -48,16 +48,14 @@ const Index = () => {
                 disabled
                 className="bg-muted text-muted-foreground font-medium px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full cursor-not-allowed transition-all duration-300 group-hover:rotate-12 w-full sm:w-auto"
                 aria-disabled="true"
-                aria-describedby="android-tooltip"
               >
                 <Smartphone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 Android
               </Button>
-              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-destructive text-destructive-foreground px-3 py-1 rounded-md text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap">
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-destructive text-destructive-foreground px-3 py-1 rounded-md text-sm font-medium opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pointer-events-none whitespace-nowrap z-10">
                 NON DISPONIBILE
               </div>
             </div>
-            <span id="android-tooltip" className="sr-only">Disponibilità futura</span>
           </div>
         </div>
       </section>
