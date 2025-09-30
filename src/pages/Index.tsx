@@ -11,7 +11,7 @@ const Index = () => {
             <img 
               src="/favicon.ico" 
               alt="Outfitted Logo" 
-              className="w-8 h-8 sm:w-10 sm:h-10"
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg"
             />
             <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">Outfitted</h1>
           </div>
