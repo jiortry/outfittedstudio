@@ -13,7 +13,17 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        outfitted: ['Outfitted', 'system-ui', '-apple-system', 'sans-serif'],
+      },
       colors: {
+        'violet-primary': 'hsl(var(--violet-primary))',
+        'violet-medium': 'hsl(var(--violet-medium))',
+        'violet-light': 'hsl(var(--violet-light))',
+        'violet-dark': 'hsl(var(--violet-dark))',
+        'teal-accent': 'hsl(var(--teal-accent))',
+        emerald: 'hsl(var(--emerald))',
+        danger: 'hsl(var(--danger))',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
