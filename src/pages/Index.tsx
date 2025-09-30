@@ -34,11 +34,11 @@ const Index = () => {
               asChild
               size="lg"
               className="bg-primary hover:bg-violet-light text-primary-foreground font-medium px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full transition-all hover:scale-105 w-full sm:w-auto"
-              aria-label="Scarica Outfitted per iOS"
+              aria-label="Scarica Outfitted per iPhone"
             >
               <a href="">
                 <Apple className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                iOS
+                Scarica per iPhone
               </a>
             </Button>
             
@@ -50,7 +50,7 @@ const Index = () => {
                 aria-disabled="true"
               >
                 <Smartphone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                Android
+                Scarica per Android
               </Button>
               {/* Tooltip per NON DISPONIBILE */}
               <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1 bg-destructive text-destructive-foreground text-xs font-medium rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
