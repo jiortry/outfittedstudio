@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 const TypingAnimation = () => {
   const [displayText, setDisplayText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
+  const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {
     const correctText = "SCARICA L'APP";
@@ -26,7 +27,7 @@ const TypingAnimation = () => {
           }, 500);
         }
       } else if (phase === 1) {
-        // Fase 2: Cancella "LP" (torna a "SCARICA L'AL")
+        // Fase 2: Cancella "LP" carattere per carattere
         if (currentIndex > baseText.length) {
           setDisplayText(wrongText.slice(0, currentIndex));
           currentIndex--;
@@ -43,33 +44,36 @@ const TypingAnimation = () => {
           setDisplayText(correctText.slice(0, currentIndex + 1));
           currentIndex++;
         } else {
-          // Pausa prima di ricominciare
+          // Animazione completata - nasconde il cursore
           setTimeout(() => {
-            phase = 0;
-            currentIndex = 0;
-            setDisplayText('');
-          }, 2000);
+            setIsComplete(true);
+            setShowCursor(false);
+          }, 1000);
         }
       }
     };
 
     const interval = setInterval(typeText, 150);
     
-    // Cursor blinking
+    // Cursor blinking solo se non completato
     const cursorInterval = setInterval(() => {
-      setShowCursor(prev => !prev);
+      if (!isComplete) {
+        setShowCursor(prev => !prev);
+      }
     }, 500);
 
     return () => {
       clearInterval(interval);
       clearInterval(cursorInterval);
     };
-  }, []);
+  }, [isComplete]);
 
   return (
     <span className="typing-animation">
       {displayText}
-      <span className={`typing-cursor ${showCursor ? 'opacity-100' : 'opacity-0'}`}></span>
+      {!isComplete && (
+        <span className={`typing-cursor ${showCursor ? 'opacity-100' : 'opacity-0'}`}></span>
+      )}
     </span>
   );
 };
