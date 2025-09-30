@@ -151,7 +151,7 @@ All colors MUST be HSL.
     display: flex;
     align-items: center;
     justify-content: center;
-    font-medium;
+    font-weight: 500;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid transparent;
     min-height: 48px;
