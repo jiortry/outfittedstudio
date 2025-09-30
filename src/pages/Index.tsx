@@ -18,7 +18,7 @@ const Index = () => {
             SCARICA L'APP:
           </h2>
           <p className="text-sm md:text-base text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-            Outfitted è l'app che rivoluziona il tuo guardaroba con l'intelligenza artificiale. Scansiona i tuoi capi, organizza il tuo armadio digitale e ricevi suggerimenti di outfit personalizzati per ogni occasione.
+            Outfitted è l'app che rivoluziona il tuo guardaroba con l'intelligenza artificiale.
           </p>
           
           {/* CTA Buttons */}
@@ -53,6 +53,10 @@ const Index = () => {
       {/* Come Funziona Section */}
       <section className="py-32 px-6">
         <div className="container mx-auto max-w-6xl">
+          <p className="text-sm md:text-base text-muted-foreground mb-16 max-w-3xl mx-auto text-center leading-relaxed">
+            Scansiona i tuoi capi, organizza il tuo armadio digitale e ricevi suggerimenti di outfit personalizzati per ogni occasione.
+          </p>
+          
           <div className="grid md:grid-cols-3 gap-16">
             {/* Step 1 - Scansiona */}
             <div className="text-center space-y-6">
