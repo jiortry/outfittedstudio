@@ -125,6 +125,8 @@ All colors MUST be HSL.
     perspective: 1000px;
     cursor: pointer;
     min-height: 48px;
+    width: 100%;
+    display: inline-block;
   }
   
   .android-card:hover,
@@ -147,6 +149,7 @@ All colors MUST be HSL.
     font-medium;
     transition: all 0.3s ease;
     border: 1px solid transparent;
+    min-height: 48px;
   }
   
   .android-front {

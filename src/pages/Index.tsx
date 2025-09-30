@@ -42,7 +42,7 @@ const Index = () => {
               </a>
             </Button>
             
-            <div className="android-card w-full sm:w-auto">
+            <div className="android-card w-full sm:w-auto inline-block">
               <div className="android-front px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg">
                 <Smartphone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 Android
