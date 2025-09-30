@@ -42,13 +42,13 @@ const Index = () => {
               </a>
             </Button>
             
-            <div className="android-card w-full sm:w-auto inline-block group">
-              <div className="android-front px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg flex items-center justify-center">
-                <Smartphone className="mr-2 h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-300 group-hover:rotate-12" />
-                <span className="transition-all duration-300">Android</span>
+            <div className="android-card w-full sm:w-auto">
+              <div className="android-front px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg">
+                <Smartphone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                Android
               </div>
-              <div className="android-back px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg flex items-center justify-center">
-                <span className="text-sm sm:text-base font-bold animate-pulse">NON DISPONIBILE</span>
+              <div className="android-back px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg">
+                <span className="text-sm sm:text-base font-bold">NON DISPONIBILE</span>
               </div>
             </div>
             <span id="android-tooltip" className="sr-only">Disponibilità futura</span>

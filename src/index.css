@@ -121,22 +121,15 @@ All colors MUST be HSL.
   .android-card {
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    perspective: 1200px;
+    transition: transform 0.6s ease;
+    perspective: 1000px;
     cursor: pointer;
     min-height: 48px;
-    width: 100%;
-    display: inline-block;
-    animation: float 3s ease-in-out infinite;
   }
   
-  .android-card:hover {
-    transform: rotateY(180deg) scale(1.05);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  }
-  
+  .android-card:hover,
   .android-card:active {
-    transform: rotateY(180deg) scale(0.98);
+    transform: rotateY(180deg);
   }
   
   .android-front,
@@ -151,33 +144,21 @@ All colors MUST be HSL.
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 500;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-medium;
+    transition: all 0.3s ease;
     border: 1px solid transparent;
-    min-height: 48px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .android-front {
-    background: linear-gradient(135deg, hsl(var(--muted)), hsl(var(--muted) / 0.8));
+    background-color: hsl(var(--muted));
     color: hsl(var(--muted-foreground));
     border-color: hsl(var(--border));
-    transform: translateZ(2px);
   }
   
   .android-back {
-    background: linear-gradient(135deg, hsl(var(--destructive)), hsl(var(--destructive) / 0.8));
+    background-color: hsl(var(--destructive));
     color: hsl(var(--destructive-foreground));
-    transform: rotateY(180deg) translateZ(2px);
-  }
-  
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px) rotateX(0deg);
-    }
-    50% {
-      transform: translateY(-3px) rotateX(2deg);
-    }
+    transform: rotateY(180deg);
   }
   
   @keyframes fadeIn {
