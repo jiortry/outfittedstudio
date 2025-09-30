@@ -1,4 +1,4 @@
-import { Smartphone, Sparkles, Grid3x3, Shirt } from "lucide-react";
+import { Smartphone, Sparkles, Camera, Shirt } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
@@ -14,9 +14,12 @@ const Index = () => {
       {/* Hero Section */}
       <section className="pt-40 pb-32 px-6">
         <div className="container mx-auto max-w-4xl text-center animate-fade-in">
-          <h2 className="text-6xl md:text-8xl font-bold tracking-tight mb-12 leading-tight text-foreground">
+          <h2 className="text-6xl md:text-8xl font-bold tracking-tight mb-6 leading-tight text-foreground">
             SCARICA L'APP:
           </h2>
+          <p className="text-sm md:text-base text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+            Outfitted è l'app che rivoluziona il tuo guardaroba con l'intelligenza artificiale. Scansiona i tuoi capi, organizza il tuo armadio digitale e ricevi suggerimenti di outfit personalizzati per ogni occasione.
+          </p>
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-delay">
@@ -51,26 +54,26 @@ const Index = () => {
       <section className="py-32 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-3 gap-16">
-            {/* Step 1 */}
+            {/* Step 1 - Scansiona */}
             <div className="text-center space-y-6">
-              <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-8">
-                <Sparkles className="h-8 w-8 text-primary" />
+              <div className="w-16 h-16 mx-auto bg-violet-primary/20 rounded-full flex items-center justify-center mb-8">
+                <Camera className="h-8 w-8 text-violet-light" strokeWidth={2.5} />
               </div>
               <h4 className="text-2xl font-semibold text-foreground">Scansiona</h4>
             </div>
 
-            {/* Step 2 */}
+            {/* Step 2 - Genera */}
             <div className="text-center space-y-6">
-              <div className="w-16 h-16 mx-auto bg-accent/10 rounded-full flex items-center justify-center mb-8">
-                <Grid3x3 className="h-8 w-8 text-accent" />
+              <div className="w-16 h-16 mx-auto bg-accent/20 rounded-full flex items-center justify-center mb-8">
+                <Sparkles className="h-8 w-8 text-teal-accent" strokeWidth={2.5} />
               </div>
-              <h4 className="text-2xl font-semibold text-foreground">Organizza</h4>
+              <h4 className="text-2xl font-semibold text-foreground">Genera</h4>
             </div>
 
-            {/* Step 3 */}
+            {/* Step 3 - Indossa */}
             <div className="text-center space-y-6">
-              <div className="w-16 h-16 mx-auto bg-secondary/10 rounded-full flex items-center justify-center mb-8">
-                <Shirt className="h-8 w-8 text-secondary" />
+              <div className="w-16 h-16 mx-auto bg-secondary/20 rounded-full flex items-center justify-center mb-8">
+                <Shirt className="h-8 w-8 text-secondary" strokeWidth={2.5} />
               </div>
               <h4 className="text-2xl font-semibold text-foreground">Indossa</h4>
             </div>
