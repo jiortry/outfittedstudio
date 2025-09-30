@@ -5,41 +5,55 @@ const TypingAnimation = () => {
   const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
-    const text = "SCARICA L'APP";
+    const correctText = "SCARICA L'APP";
     const wrongText = "SCARICA L'ALP";
-    const partialText = "SCARICA L'AL";
+    const baseText = "SCARICA L'AL";
     
     let currentIndex = 0;
-    let isTyping = true;
-    let wrongAttempts = 0;
+    let phase = 0; // 0: typing wrong, 1: deleting, 2: typing correct
     
     const typeText = () => {
-      if (isTyping) {
+      if (phase === 0) {
+        // Fase 1: Scrive "SCARICA L'ALP"
         if (currentIndex < wrongText.length) {
           setDisplayText(wrongText.slice(0, currentIndex + 1));
           currentIndex++;
         } else {
-          // Pausa prima di cancellare
+          // Pausa breve prima di cancellare
           setTimeout(() => {
-            isTyping = false;
+            phase = 1;
             currentIndex = wrongText.length - 1;
-          }, 1000);
+          }, 500);
         }
-      } else {
-        if (currentIndex > partialText.length) {
-          setDisplayText(partialText);
+      } else if (phase === 1) {
+        // Fase 2: Cancella "LP" (torna a "SCARICA L'AL")
+        if (currentIndex > baseText.length) {
+          setDisplayText(wrongText.slice(0, currentIndex));
           currentIndex--;
+        } else {
+          // Pausa breve prima di correggere
+          setTimeout(() => {
+            phase = 2;
+            currentIndex = baseText.length;
+          }, 200);
+        }
+      } else if (phase === 2) {
+        // Fase 3: Aggiunge "PP" per completare "APP"
+        if (currentIndex < correctText.length) {
+          setDisplayText(correctText.slice(0, currentIndex + 1));
+          currentIndex++;
         } else {
           // Pausa prima di ricominciare
           setTimeout(() => {
-            isTyping = true;
-            currentIndex = partialText.length;
-          }, 500);
+            phase = 0;
+            currentIndex = 0;
+            setDisplayText('');
+          }, 2000);
         }
       }
     };
 
-    const interval = setInterval(typeText, 200);
+    const interval = setInterval(typeText, 150);
     
     // Cursor blinking
     const cursorInterval = setInterval(() => {
