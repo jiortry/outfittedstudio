@@ -4,38 +4,90 @@ const TypingAnimation = () => {
   const [displayText, setDisplayText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
   const [isComplete, setIsComplete] = useState(false);
+  const [animationPhase, setAnimationPhase] = useState<'typing' | 'error' | 'correcting' | 'retyping' | 'done'>('typing');
 
   useEffect(() => {
-    const text = "SCARICA L'APP";
+    const correctText = "SCARICA L'APP";
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    
+    // Genera una posizione casuale per l'errore (escludendo la prima lettera)
+    const errorPosition = Math.floor(Math.random() * (correctText.length - 1)) + 1;
+    const wrongLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+    
+    // Crea il testo con l'errore
+    const textWithError = correctText.slice(0, errorPosition) + wrongLetter + correctText.slice(errorPosition + 1);
+    
     let currentIndex = 0;
+    let interval: NodeJS.Timeout;
+    let cursorInterval: NodeJS.Timeout;
     
-    const typeText = () => {
-      if (currentIndex < text.length) {
-        setDisplayText(text.slice(0, currentIndex + 1));
-        currentIndex++;
-      } else {
-        // Animazione completata - nasconde il cursore
-        setTimeout(() => {
-          setIsComplete(true);
-          setShowCursor(false);
-        }, 1000);
-      }
+    const startTyping = () => {
+      interval = setInterval(() => {
+        if (currentIndex < textWithError.length) {
+          setDisplayText(textWithError.slice(0, currentIndex + 1));
+          currentIndex++;
+        } else {
+          // Errore completato, inizia la correzione dopo una pausa
+          clearInterval(interval);
+          setTimeout(() => {
+            setAnimationPhase('correcting');
+            startCorrecting();
+          }, 1000);
+        }
+      }, 150);
     };
-
-    const interval = setInterval(typeText, 150);
     
-    // Cursor blinking solo se non completato
-    const cursorInterval = setInterval(() => {
+    const startCorrecting = () => {
+      // Cancella caratteri dalla fine fino alla posizione dell'errore
+      let deleteIndex = textWithError.length - 1;
+      
+      const deleteInterval = setInterval(() => {
+        if (deleteIndex >= errorPosition) {
+          setDisplayText(textWithError.slice(0, deleteIndex));
+          deleteIndex--;
+        } else {
+          // Inizia a riscrivere correttamente
+          clearInterval(deleteInterval);
+          setAnimationPhase('retyping');
+          startRetyping();
+        }
+      }, 100);
+    };
+    
+    const startRetyping = () => {
+      let retypeIndex = errorPosition;
+      
+      const retypeInterval = setInterval(() => {
+        if (retypeIndex < correctText.length) {
+          setDisplayText(correctText.slice(0, retypeIndex + 1));
+          retypeIndex++;
+        } else {
+          // Animazione completata
+          clearInterval(retypeInterval);
+          setAnimationPhase('done');
+          setTimeout(() => {
+            setIsComplete(true);
+            setShowCursor(false);
+          }, 1000);
+        }
+      }, 150);
+    };
+    
+    // Cursor blinking
+    cursorInterval = setInterval(() => {
       if (!isComplete) {
         setShowCursor(prev => !prev);
       }
     }, 500);
+    
+    // Avvia l'animazione
+    startTyping();
 
     return () => {
-      clearInterval(interval);
-      clearInterval(cursorInterval);
+      if (interval) clearInterval(interval);
+      if (cursorInterval) clearInterval(cursorInterval);
     };
-  }, []); // Rimuovo isComplete dalla dependency array per evitare loop infiniti
+  }, []);
 
   return (
     <span className="typing-animation">
