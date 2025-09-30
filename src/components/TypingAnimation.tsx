@@ -27,7 +27,7 @@ const TypingAnimation = () => {
           }, 500);
         }
       } else if (phase === 1) {
-        // Fase 2: Cancella "LP" carattere per carattere
+        // Fase 2: Cancella "LP" carattere per carattere (torna a "SCARICA L'AL")
         if (currentIndex > baseText.length) {
           setDisplayText(wrongText.slice(0, currentIndex));
           currentIndex--;
@@ -66,7 +66,7 @@ const TypingAnimation = () => {
       clearInterval(interval);
       clearInterval(cursorInterval);
     };
-  }, [isComplete]);
+  }, []); // Rimuovo isComplete dalla dependency array per evitare loop infiniti
 
   return (
     <span className="typing-animation">
