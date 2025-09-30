@@ -42,19 +42,13 @@ const Index = () => {
               </a>
             </Button>
             
-            <div className="relative group">
-              <Button 
-                size="lg"
-                disabled
-                className="bg-muted text-muted-foreground font-medium px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full cursor-not-allowed android-3d-rotate w-full sm:w-auto"
-                aria-disabled="true"
-                aria-describedby="android-tooltip"
-              >
+            <div className="android-card w-full sm:w-auto">
+              <div className="android-front px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg">
                 <Smartphone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 Android
-              </Button>
-              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-destructive text-destructive-foreground px-3 py-1 rounded-md text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap">
-                NON DISPONIBILE
+              </div>
+              <div className="android-back px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg">
+                <span className="text-sm sm:text-base font-bold">NON DISPONIBILE</span>
               </div>
             </div>
             <span id="android-tooltip" className="sr-only">Disponibilità futura</span>
