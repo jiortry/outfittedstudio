@@ -108,41 +108,28 @@ const Index = () => {
             }`}
             style={{
               background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, 
-                hsl(var(--violet-primary) / 0.15) 0%, 
-                hsl(var(--teal-accent) / 0.1) 50%, 
-                hsl(var(--emerald) / 0.05) 100%)`,
+                hsl(var(--violet-primary) / 0.4) 0%, 
+                hsl(var(--teal-accent) / 0.3) 50%, 
+                hsl(var(--emerald) / 0.2) 100%)`,
               borderRadius: '50% 30% 70% 40% / 30% 50% 20% 60%',
               transition: 'border-radius 200ms ease-out, background 200ms ease-out',
               transform: `scale(${1 + (mousePosition.x - 50) * 0.0005})`,
+              border: `2px solid hsl(var(--violet-primary) / 0.3)`,
+              boxShadow: `0 8px 32px hsl(var(--violet-primary) / 0.2), 
+                         0 4px 16px hsl(var(--teal-accent) / 0.15)`,
             }}
           >
             <div 
-              className="relative z-10 px-8 py-6 text-sm sm:text-base text-muted-foreground leading-relaxed max-w-lg"
+              className="relative z-10 px-8 py-6 text-sm sm:text-base text-foreground leading-relaxed max-w-lg"
               style={{
-                background: 'rgba(0, 0, 0, 0.02)',
-                backdropFilter: 'blur(1px)',
+                background: 'rgba(255, 255, 255, 0.05)',
+                backdropFilter: 'blur(2px)',
                 borderRadius: 'inherit',
                 transition: 'all 200ms ease-out',
               }}
             >
               Nato dalla passione italiana per la moda e l'innovazione, Outfitted unisce il gusto estetico del Made in Italy con le più avanzate tecnologie di intelligenza artificiale.
             </div>
-            
-            {/* Liquid border effect */}
-            <div 
-              className="absolute inset-0 rounded-full opacity-30"
-              style={{
-                background: `conic-gradient(from ${mousePosition.x * 3.6}deg, 
-                  hsl(var(--violet-primary) / 0.3), 
-                  hsl(var(--teal-accent) / 0.2), 
-                  hsl(var(--emerald) / 0.3), 
-                  hsl(var(--violet-primary) / 0.3))`,
-                borderRadius: 'inherit',
-                filter: 'blur(1px)',
-                transform: `rotate(${mousePosition.x * 0.5}deg)`,
-                transition: 'transform 300ms ease-out',
-              }}
-            />
           </div>
         </div>
       </section>
