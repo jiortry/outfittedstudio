@@ -90,8 +90,17 @@ const Index = () => {
       </section>
 
       {/* Made in Italy Section */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6">
-        <div className="container mx-auto max-w-4xl text-center">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 relative overflow-hidden">
+        {/* Subtle wardrobe pattern background */}
+        <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
+          <div className="absolute top-10 left-10 w-16 h-20 border border-foreground/10 rounded-sm transform rotate-12"></div>
+          <div className="absolute top-20 right-16 w-12 h-24 border border-foreground/10 rounded-sm transform -rotate-6"></div>
+          <div className="absolute bottom-20 left-20 w-14 h-18 border border-foreground/10 rounded-sm transform rotate-3"></div>
+          <div className="absolute bottom-16 right-12 w-10 h-22 border border-foreground/10 rounded-sm transform -rotate-12"></div>
+          <div className="absolute top-1/2 left-1/4 w-8 h-20 border border-foreground/10 rounded-sm transform rotate-45"></div>
+          <div className="absolute top-1/3 right-1/4 w-12 h-16 border border-foreground/10 rounded-sm transform -rotate-30"></div>
+        </div>
+        <div className="container mx-auto max-w-4xl text-center relative z-10">
           <div className="inline-flex items-center gap-3 bg-gradient-to-r from-violet-primary/10 to-teal-accent/10 backdrop-blur-sm border border-border/50 rounded-full px-6 py-3 mb-8 transition-all duration-300">
             <div className="w-2 h-2 bg-emerald rounded-full animate-pulse"></div>
             <span className="text-sm font-medium text-foreground">
@@ -108,15 +117,15 @@ const Index = () => {
             }`}
             style={{
               background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, 
-                hsl(var(--violet-primary) / 0.4) 0%, 
-                hsl(var(--teal-accent) / 0.3) 50%, 
-                hsl(var(--emerald) / 0.2) 100%)`,
+                hsl(270, 60%, 25%) 0%, 
+                hsl(180, 60%, 25%) 50%, 
+                hsl(140, 70%, 30%) 100%)`,
               borderRadius: '50% 30% 70% 40% / 30% 50% 20% 60%',
               transition: 'border-radius 200ms ease-out, background 200ms ease-out',
               transform: `scale(${1 + (mousePosition.x - 50) * 0.0005})`,
-              border: `2px solid hsl(var(--violet-primary) / 0.3)`,
-              boxShadow: `0 8px 32px hsl(var(--violet-primary) / 0.2), 
-                         0 4px 16px hsl(var(--teal-accent) / 0.15)`,
+              border: `2px solid hsl(270, 60%, 35%)`,
+              boxShadow: `0 8px 32px hsl(270, 60%, 25%), 
+                         0 4px 16px hsl(180, 60%, 25%)`,
             }}
           >
             <div 
