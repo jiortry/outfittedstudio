@@ -5,45 +5,45 @@ import TypingAnimation from "@/components/TypingAnimation";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
-      {/* Subtle Wardrobe Shelves Background */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        {/* Left side shelves */}
-        <div className="absolute top-32 left-8 w-24 h-0.5 bg-foreground/4 opacity-30"></div>
-        <div className="absolute top-32 left-8 w-0.5 h-32 bg-foreground/4 opacity-30"></div>
-        <div className="absolute top-64 left-8 w-24 h-0.5 bg-foreground/4 opacity-30"></div>
+      {/* Wooden Wardrobe Shelves Background */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-10">
+        {/* Left side shelves - Main structure */}
+        <div className="absolute top-32 left-8 w-24 h-1 bg-wood-medium opacity-40 shadow-sm"></div>
+        <div className="absolute top-32 left-8 w-1 h-32 bg-wood-dark opacity-50 shadow-sm"></div>
+        <div className="absolute top-64 left-8 w-24 h-1 bg-wood-medium opacity-40 shadow-sm"></div>
         
-        <div className="absolute top-40 left-12 w-16 h-0.5 bg-foreground/3 opacity-25"></div>
-        <div className="absolute top-40 left-12 w-0.5 h-20 bg-foreground/3 opacity-25"></div>
-        <div className="absolute top-60 left-12 w-16 h-0.5 bg-foreground/3 opacity-25"></div>
+        <div className="absolute top-40 left-12 w-16 h-1 bg-wood-light opacity-35 shadow-sm"></div>
+        <div className="absolute top-40 left-12 w-1 h-20 bg-wood-dark opacity-45 shadow-sm"></div>
+        <div className="absolute top-60 left-12 w-16 h-1 bg-wood-light opacity-35 shadow-sm"></div>
         
-        {/* Right side shelves */}
-        <div className="absolute top-28 right-12 w-20 h-0.5 bg-foreground/4 opacity-30"></div>
-        <div className="absolute top-28 right-12 w-0.5 h-28 bg-foreground/4 opacity-30"></div>
-        <div className="absolute top-56 right-12 w-20 h-0.5 bg-foreground/4 opacity-30"></div>
+        {/* Right side shelves - Main structure */}
+        <div className="absolute top-28 right-12 w-20 h-1 bg-wood-medium opacity-40 shadow-sm"></div>
+        <div className="absolute top-28 right-12 w-1 h-28 bg-wood-dark opacity-50 shadow-sm"></div>
+        <div className="absolute top-56 right-12 w-20 h-1 bg-wood-medium opacity-40 shadow-sm"></div>
         
-        <div className="absolute top-36 right-16 w-14 h-0.5 bg-foreground/3 opacity-25"></div>
-        <div className="absolute top-36 right-16 w-0.5 h-16 bg-foreground/3 opacity-25"></div>
-        <div className="absolute top-52 right-16 w-14 h-0.5 bg-foreground/3 opacity-25"></div>
+        <div className="absolute top-36 right-16 w-14 h-1 bg-wood-light opacity-35 shadow-sm"></div>
+        <div className="absolute top-36 right-16 w-1 h-16 bg-wood-dark opacity-45 shadow-sm"></div>
+        <div className="absolute top-52 right-16 w-14 h-1 bg-wood-light opacity-35 shadow-sm"></div>
         
         {/* Center decorative elements */}
-        <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 w-32 h-0.5 bg-foreground/2 opacity-20"></div>
-        <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 w-0.5 h-24 bg-foreground/2 opacity-20"></div>
-        <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 w-32 h-0.5 bg-foreground/2 opacity-20" style={{top: 'calc(33.33% + 60px)'}}></div>
+        <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-wood-accent opacity-30 shadow-sm"></div>
+        <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 w-1 h-24 bg-wood-dark opacity-40 shadow-sm"></div>
+        <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-wood-accent opacity-30 shadow-sm" style={{top: 'calc(33.33% + 60px)'}}></div>
         
-        {/* Subtle hangers */}
-        <div className="absolute top-36 left-16 w-6 h-1 border-t border-foreground/3 opacity-20"></div>
-        <div className="absolute top-36 left-20 w-6 h-1 border-t border-foreground/3 opacity-20"></div>
-        <div className="absolute top-36 left-24 w-6 h-1 border-t border-foreground/3 opacity-20"></div>
+        {/* Wooden hangers */}
+        <div className="absolute top-36 left-16 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
+        <div className="absolute top-36 left-20 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
+        <div className="absolute top-36 left-24 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
         
-        <div className="absolute top-68 left-16 w-6 h-1 border-t border-foreground/3 opacity-20"></div>
-        <div className="absolute top-68 left-20 w-6 h-1 border-t border-foreground/3 opacity-20"></div>
+        <div className="absolute top-68 left-16 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
+        <div className="absolute top-68 left-20 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
         
-        <div className="absolute top-32 right-20 w-6 h-1 border-t border-foreground/3 opacity-20"></div>
-        <div className="absolute top-32 right-24 w-6 h-1 border-t border-foreground/3 opacity-20"></div>
-        <div className="absolute top-32 right-28 w-6 h-1 border-t border-foreground/3 opacity-20"></div>
+        <div className="absolute top-32 right-20 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
+        <div className="absolute top-32 right-24 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
+        <div className="absolute top-32 right-28 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
         
-        <div className="absolute top-60 right-20 w-6 h-1 border-t border-foreground/3 opacity-20"></div>
-        <div className="absolute top-60 right-24 w-6 h-1 border-t border-foreground/3 opacity-20"></div>
+        <div className="absolute top-60 right-20 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
+        <div className="absolute top-60 right-24 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
       </div>
 
       {/* Header */}
@@ -61,7 +61,7 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-32 sm:pt-40 pb-24 sm:pb-32 px-4 sm:px-6">
+      <section className="pt-32 sm:pt-40 pb-24 sm:pb-32 px-4 sm:px-6 relative z-20">
         <div className="container mx-auto max-w-4xl text-center animate-fade-in">
           <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tight mb-4 sm:mb-6 leading-tight text-foreground">
             <TypingAnimation />
@@ -113,24 +113,24 @@ const Index = () => {
       </section>
 
       {/* Come Funziona Section */}
-      <section className="py-20 sm:py-32 px-4 sm:px-6 relative">
-        {/* Additional subtle wardrobe elements */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-10 left-10 w-12 h-0.5 bg-foreground/2 opacity-15"></div>
-          <div className="absolute top-10 left-10 w-0.5 h-16 bg-foreground/2 opacity-15"></div>
-          <div className="absolute top-26 left-10 w-12 h-0.5 bg-foreground/2 opacity-15"></div>
+      <section className="py-20 sm:py-32 px-4 sm:px-6 relative z-20">
+        {/* Additional wooden wardrobe elements */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
+          <div className="absolute top-10 left-10 w-12 h-1 bg-wood-light opacity-25 shadow-sm"></div>
+          <div className="absolute top-10 left-10 w-1 h-16 bg-wood-dark opacity-30 shadow-sm"></div>
+          <div className="absolute top-26 left-10 w-12 h-1 bg-wood-light opacity-25 shadow-sm"></div>
           
-          <div className="absolute top-16 right-12 w-10 h-0.5 bg-foreground/2 opacity-15"></div>
-          <div className="absolute top-16 right-12 w-0.5 h-12 bg-foreground/2 opacity-15"></div>
-          <div className="absolute top-28 right-12 w-10 h-0.5 bg-foreground/2 opacity-15"></div>
+          <div className="absolute top-16 right-12 w-10 h-1 bg-wood-light opacity-25 shadow-sm"></div>
+          <div className="absolute top-16 right-12 w-1 h-12 bg-wood-dark opacity-30 shadow-sm"></div>
+          <div className="absolute top-28 right-12 w-10 h-1 bg-wood-light opacity-25 shadow-sm"></div>
           
-          <div className="absolute bottom-20 left-1/4 w-8 h-0.5 bg-foreground/1 opacity-10"></div>
-          <div className="absolute bottom-20 left-1/4 w-0.5 h-8 bg-foreground/1 opacity-10"></div>
-          <div className="absolute bottom-28 left-1/4 w-8 h-0.5 bg-foreground/1 opacity-10"></div>
+          <div className="absolute bottom-20 left-1/4 w-8 h-1 bg-wood-accent opacity-20 shadow-sm"></div>
+          <div className="absolute bottom-20 left-1/4 w-1 h-8 bg-wood-dark opacity-25 shadow-sm"></div>
+          <div className="absolute bottom-28 left-1/4 w-8 h-1 bg-wood-accent opacity-20 shadow-sm"></div>
           
-          <div className="absolute bottom-16 right-1/4 w-6 h-0.5 bg-foreground/1 opacity-10"></div>
-          <div className="absolute bottom-16 right-1/4 w-0.5 h-6 bg-foreground/1 opacity-10"></div>
-          <div className="absolute bottom-22 right-1/4 w-6 h-0.5 bg-foreground/1 opacity-10"></div>
+          <div className="absolute bottom-16 right-1/4 w-6 h-1 bg-wood-accent opacity-20 shadow-sm"></div>
+          <div className="absolute bottom-16 right-1/4 w-1 h-6 bg-wood-dark opacity-25 shadow-sm"></div>
+          <div className="absolute bottom-22 right-1/4 w-6 h-1 bg-wood-accent opacity-20 shadow-sm"></div>
         </div>
         
         <div className="container mx-auto max-w-6xl relative z-10">
@@ -167,16 +167,16 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-6 sm:py-8 px-4 sm:px-6 border-t border-border relative">
-        {/* Minimal footer wardrobe elements */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-4 left-8 w-6 h-0.5 bg-foreground/1 opacity-8"></div>
-          <div className="absolute top-4 left-8 w-0.5 h-4 bg-foreground/1 opacity-8"></div>
-          <div className="absolute top-8 left-8 w-6 h-0.5 bg-foreground/1 opacity-8"></div>
+      <footer className="py-6 sm:py-8 px-4 sm:px-6 border-t border-border relative z-20">
+        {/* Minimal footer wooden elements */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
+          <div className="absolute top-4 left-8 w-6 h-1 bg-wood-accent opacity-15 shadow-sm"></div>
+          <div className="absolute top-4 left-8 w-1 h-4 bg-wood-dark opacity-20 shadow-sm"></div>
+          <div className="absolute top-8 left-8 w-6 h-1 bg-wood-accent opacity-15 shadow-sm"></div>
           
-          <div className="absolute top-6 right-12 w-4 h-0.5 bg-foreground/1 opacity-8"></div>
-          <div className="absolute top-6 right-12 w-0.5 h-3 bg-foreground/1 opacity-8"></div>
-          <div className="absolute top-9 right-12 w-4 h-0.5 bg-foreground/1 opacity-8"></div>
+          <div className="absolute top-6 right-12 w-4 h-1 bg-wood-accent opacity-15 shadow-sm"></div>
+          <div className="absolute top-6 right-12 w-1 h-3 bg-wood-dark opacity-20 shadow-sm"></div>
+          <div className="absolute top-9 right-12 w-4 h-1 bg-wood-accent opacity-15 shadow-sm"></div>
         </div>
         
         <div className="container mx-auto max-w-6xl text-center relative z-10">

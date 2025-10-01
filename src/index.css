@@ -17,6 +17,12 @@ All colors MUST be HSL.
     --emerald: 140 59% 25%;             /* #1A6633 */
     --danger: 0 60% 50%;                /* #CC3333 */
     
+    /* Wood Colors for Shelves */
+    --wood-light: 25 40% 35%;           /* #8B5A2B - Light Oak */
+    --wood-medium: 25 45% 25%;          /* #5D3A1A - Medium Oak */
+    --wood-dark: 25 50% 18%;            /* #3D2510 - Dark Oak */
+    --wood-accent: 25 35% 45%;          /* #A67C52 - Oak Accent */
+    
     /* Dark Theme by Default */
     --background: 240 32% 8%;
     --foreground: 0 0% 98%;
