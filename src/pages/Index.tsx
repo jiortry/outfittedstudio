@@ -24,7 +24,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
       {/* Wardrobe structure background pattern */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-10">
         {/* Wardrobe shelves */}
         <div className="absolute top-24 left-12 w-32 h-1 bg-foreground/8 opacity-40"></div>
         <div className="absolute top-24 left-12 w-1 h-40 bg-foreground/8 opacity-40"></div>
@@ -78,7 +78,7 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-32 sm:pt-40 pb-24 sm:pb-32 px-4 sm:px-6">
+      <section className="pt-32 sm:pt-40 pb-24 sm:pb-32 px-4 sm:px-6 relative z-20">
         <div className="container mx-auto max-w-4xl text-center animate-fade-in">
           <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tight mb-4 sm:mb-6 leading-tight text-foreground">
             <TypingAnimation />
@@ -130,7 +130,7 @@ const Index = () => {
       </section>
 
       {/* Made in Italy Section */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 relative overflow-hidden">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 relative overflow-hidden z-20">
         {/* Subtle wardrobe pattern background */}
         <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
           <div className="absolute top-10 left-10 w-16 h-20 border border-foreground/10 rounded-sm transform rotate-12"></div>
@@ -184,7 +184,7 @@ const Index = () => {
       </section>
 
       {/* Come Funziona Section */}
-      <section className="py-20 sm:py-32 px-4 sm:px-6">
+      <section className="py-20 sm:py-32 px-4 sm:px-6 relative z-20">
         <div className="container mx-auto max-w-6xl">
           <p className="text-sm sm:text-base text-muted-foreground mb-12 sm:mb-16 max-w-3xl mx-auto text-center leading-relaxed px-4">
             Scansiona i tuoi capi, organizza il tuo armadio digitale e ricevi suggerimenti di outfit personalizzati per ogni occasione.
@@ -219,7 +219,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-6 sm:py-8 px-4 sm:px-6 border-t border-border">
+      <footer className="py-6 sm:py-8 px-4 sm:px-6 border-t border-border relative z-20">
         <div className="container mx-auto max-w-6xl text-center">
           <p className="text-xs sm:text-sm text-muted-foreground">
             © 2025 Outfitted
