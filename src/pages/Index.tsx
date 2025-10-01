@@ -30,20 +30,64 @@ const Index = () => {
         <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 w-1 h-24 bg-wood-dark opacity-40 shadow-sm"></div>
         <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-wood-accent opacity-30 shadow-sm" style={{top: 'calc(33.33% + 60px)'}}></div>
         
-        {/* Wooden hangers */}
+        {/* Additional wooden shelves - Left side */}
+        <div className="absolute top-48 left-4 w-20 h-1 bg-wood-accent opacity-30 shadow-sm"></div>
+        <div className="absolute top-48 left-4 w-1 h-16 bg-wood-dark opacity-35 shadow-sm"></div>
+        <div className="absolute top-64 left-4 w-20 h-1 bg-wood-accent opacity-30 shadow-sm"></div>
+        
+        <div className="absolute top-52 left-6 w-12 h-1 bg-wood-light opacity-25 shadow-sm"></div>
+        <div className="absolute top-52 left-6 w-1 h-8 bg-wood-dark opacity-30 shadow-sm"></div>
+        <div className="absolute top-60 left-6 w-12 h-1 bg-wood-light opacity-25 shadow-sm"></div>
+        
+        {/* Additional wooden shelves - Right side */}
+        <div className="absolute top-44 right-4 w-18 h-1 bg-wood-accent opacity-30 shadow-sm"></div>
+        <div className="absolute top-44 right-4 w-1 h-20 bg-wood-dark opacity-35 shadow-sm"></div>
+        <div className="absolute top-64 right-4 w-18 h-1 bg-wood-accent opacity-30 shadow-sm"></div>
+        
+        <div className="absolute top-48 right-6 w-10 h-1 bg-wood-light opacity-25 shadow-sm"></div>
+        <div className="absolute top-48 right-6 w-1 h-12 bg-wood-dark opacity-30 shadow-sm"></div>
+        <div className="absolute top-60 right-6 w-10 h-1 bg-wood-light opacity-25 shadow-sm"></div>
+        
+        {/* Center additional shelves */}
+        <div className="absolute top-40 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-wood-medium opacity-25 shadow-sm"></div>
+        <div className="absolute top-40 left-1/2 transform -translate-x-1/2 w-1 h-12 bg-wood-dark opacity-30 shadow-sm"></div>
+        <div className="absolute top-52 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-wood-medium opacity-25 shadow-sm"></div>
+        
+        <div className="absolute top-44 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-wood-accent opacity-20 shadow-sm"></div>
+        <div className="absolute top-44 left-1/2 transform -translate-x-1/2 w-1 h-8 bg-wood-dark opacity-25 shadow-sm"></div>
+        <div className="absolute top-52 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-wood-accent opacity-20 shadow-sm"></div>
+        
+        {/* Wooden hangers - Enhanced */}
         <div className="absolute top-36 left-16 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
         <div className="absolute top-36 left-20 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
         <div className="absolute top-36 left-24 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
+        <div className="absolute top-36 left-28 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
         
         <div className="absolute top-68 left-16 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
         <div className="absolute top-68 left-20 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
+        <div className="absolute top-68 left-24 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
         
         <div className="absolute top-32 right-20 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
         <div className="absolute top-32 right-24 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
         <div className="absolute top-32 right-28 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
+        <div className="absolute top-32 right-32 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
         
         <div className="absolute top-60 right-20 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
         <div className="absolute top-60 right-24 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
+        <div className="absolute top-60 right-28 w-6 h-1 border-t-2 border-wood-dark opacity-30"></div>
+        
+        {/* Additional hangers on new shelves */}
+        <div className="absolute top-50 left-8 w-4 h-1 border-t-2 border-wood-dark opacity-25"></div>
+        <div className="absolute top-50 left-12 w-4 h-1 border-t-2 border-wood-dark opacity-25"></div>
+        <div className="absolute top-50 left-16 w-4 h-1 border-t-2 border-wood-dark opacity-25"></div>
+        
+        <div className="absolute top-46 right-8 w-4 h-1 border-t-2 border-wood-dark opacity-25"></div>
+        <div className="absolute top-46 right-12 w-4 h-1 border-t-2 border-wood-dark opacity-25"></div>
+        <div className="absolute top-46 right-16 w-4 h-1 border-t-2 border-wood-dark opacity-25"></div>
+        
+        <div className="absolute top-42 left-1/2 transform -translate-x-1/2 w-3 h-1 border-t-2 border-wood-dark opacity-20"></div>
+        <div className="absolute top-42 left-1/2 transform -translate-x-1/2 w-3 h-1 border-t-2 border-wood-dark opacity-20" style={{left: 'calc(50% + 8px)'}}></div>
+        <div className="absolute top-42 left-1/2 transform -translate-x-1/2 w-3 h-1 border-t-2 border-wood-dark opacity-20" style={{left: 'calc(50% - 8px)'}}></div>
       </div>
 
       {/* Header */}
@@ -114,23 +158,70 @@ const Index = () => {
 
       {/* Come Funziona Section */}
       <section className="py-20 sm:py-32 px-4 sm:px-6 relative z-20">
-        {/* Additional wooden wardrobe elements */}
+        {/* Enhanced wooden wardrobe elements */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
+          {/* Left side enhanced shelves */}
           <div className="absolute top-10 left-10 w-12 h-1 bg-wood-light opacity-25 shadow-sm"></div>
           <div className="absolute top-10 left-10 w-1 h-16 bg-wood-dark opacity-30 shadow-sm"></div>
           <div className="absolute top-26 left-10 w-12 h-1 bg-wood-light opacity-25 shadow-sm"></div>
           
+          <div className="absolute top-14 left-6 w-8 h-1 bg-wood-accent opacity-20 shadow-sm"></div>
+          <div className="absolute top-14 left-6 w-1 h-10 bg-wood-dark opacity-25 shadow-sm"></div>
+          <div className="absolute top-24 left-6 w-8 h-1 bg-wood-accent opacity-20 shadow-sm"></div>
+          
+          <div className="absolute top-18 left-14 w-6 h-1 bg-wood-medium opacity-15 shadow-sm"></div>
+          <div className="absolute top-18 left-14 w-1 h-6 bg-wood-dark opacity-20 shadow-sm"></div>
+          <div className="absolute top-24 left-14 w-6 h-1 bg-wood-medium opacity-15 shadow-sm"></div>
+          
+          {/* Right side enhanced shelves */}
           <div className="absolute top-16 right-12 w-10 h-1 bg-wood-light opacity-25 shadow-sm"></div>
           <div className="absolute top-16 right-12 w-1 h-12 bg-wood-dark opacity-30 shadow-sm"></div>
           <div className="absolute top-28 right-12 w-10 h-1 bg-wood-light opacity-25 shadow-sm"></div>
           
+          <div className="absolute top-20 right-8 w-8 h-1 bg-wood-accent opacity-20 shadow-sm"></div>
+          <div className="absolute top-20 right-8 w-1 h-8 bg-wood-dark opacity-25 shadow-sm"></div>
+          <div className="absolute top-28 right-8 w-8 h-1 bg-wood-accent opacity-20 shadow-sm"></div>
+          
+          <div className="absolute top-24 right-16 w-6 h-1 bg-wood-medium opacity-15 shadow-sm"></div>
+          <div className="absolute top-24 right-16 w-1 h-4 bg-wood-dark opacity-20 shadow-sm"></div>
+          <div className="absolute top-28 right-16 w-6 h-1 bg-wood-medium opacity-15 shadow-sm"></div>
+          
+          {/* Center enhanced elements */}
+          <div className="absolute top-12 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-wood-accent opacity-18 shadow-sm"></div>
+          <div className="absolute top-12 left-1/2 transform -translate-x-1/2 w-1 h-12 bg-wood-dark opacity-22 shadow-sm"></div>
+          <div className="absolute top-24 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-wood-accent opacity-18 shadow-sm"></div>
+          
+          <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-wood-light opacity-15 shadow-sm"></div>
+          <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-1 h-6 bg-wood-dark opacity-18 shadow-sm"></div>
+          <div className="absolute top-22 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-wood-light opacity-15 shadow-sm"></div>
+          
+          {/* Bottom enhanced shelves */}
           <div className="absolute bottom-20 left-1/4 w-8 h-1 bg-wood-accent opacity-20 shadow-sm"></div>
           <div className="absolute bottom-20 left-1/4 w-1 h-8 bg-wood-dark opacity-25 shadow-sm"></div>
           <div className="absolute bottom-28 left-1/4 w-8 h-1 bg-wood-accent opacity-20 shadow-sm"></div>
           
+          <div className="absolute bottom-24 left-1/3 w-6 h-1 bg-wood-light opacity-15 shadow-sm"></div>
+          <div className="absolute bottom-24 left-1/3 w-1 h-4 bg-wood-dark opacity-18 shadow-sm"></div>
+          <div className="absolute bottom-28 left-1/3 w-6 h-1 bg-wood-light opacity-15 shadow-sm"></div>
+          
           <div className="absolute bottom-16 right-1/4 w-6 h-1 bg-wood-accent opacity-20 shadow-sm"></div>
           <div className="absolute bottom-16 right-1/4 w-1 h-6 bg-wood-dark opacity-25 shadow-sm"></div>
           <div className="absolute bottom-22 right-1/4 w-6 h-1 bg-wood-accent opacity-20 shadow-sm"></div>
+          
+          <div className="absolute bottom-20 right-1/3 w-4 h-1 bg-wood-light opacity-15 shadow-sm"></div>
+          <div className="absolute bottom-20 right-1/3 w-1 h-4 bg-wood-dark opacity-18 shadow-sm"></div>
+          <div className="absolute bottom-24 right-1/3 w-4 h-1 bg-wood-light opacity-15 shadow-sm"></div>
+          
+          {/* Additional hangers */}
+          <div className="absolute top-14 left-8 w-3 h-1 border-t-2 border-wood-dark opacity-18"></div>
+          <div className="absolute top-14 left-12 w-3 h-1 border-t-2 border-wood-dark opacity-18"></div>
+          
+          <div className="absolute top-22 right-10 w-3 h-1 border-t-2 border-wood-dark opacity-18"></div>
+          <div className="absolute top-22 right-14 w-3 h-1 border-t-2 border-wood-dark opacity-18"></div>
+          
+          <div className="absolute top-18 left-1/2 transform -translate-x-1/2 w-2 h-1 border-t-2 border-wood-dark opacity-15"></div>
+          <div className="absolute top-18 left-1/2 transform -translate-x-1/2 w-2 h-1 border-t-2 border-wood-dark opacity-15" style={{left: 'calc(50% + 6px)'}}></div>
+          <div className="absolute top-18 left-1/2 transform -translate-x-1/2 w-2 h-1 border-t-2 border-wood-dark opacity-15" style={{left: 'calc(50% - 6px)'}}></div>
         </div>
         
         <div className="container mx-auto max-w-6xl relative z-10">
@@ -168,15 +259,53 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="py-6 sm:py-8 px-4 sm:px-6 border-t border-border relative z-20">
-        {/* Minimal footer wooden elements */}
+        {/* Enhanced footer wooden elements */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
+          {/* Left side footer shelves */}
           <div className="absolute top-4 left-8 w-6 h-1 bg-wood-accent opacity-15 shadow-sm"></div>
           <div className="absolute top-4 left-8 w-1 h-4 bg-wood-dark opacity-20 shadow-sm"></div>
           <div className="absolute top-8 left-8 w-6 h-1 bg-wood-accent opacity-15 shadow-sm"></div>
           
+          <div className="absolute top-6 left-4 w-4 h-1 bg-wood-light opacity-12 shadow-sm"></div>
+          <div className="absolute top-6 left-4 w-1 h-2 bg-wood-dark opacity-15 shadow-sm"></div>
+          <div className="absolute top-8 left-4 w-4 h-1 bg-wood-light opacity-12 shadow-sm"></div>
+          
+          <div className="absolute top-5 left-12 w-3 h-1 bg-wood-medium opacity-10 shadow-sm"></div>
+          <div className="absolute top-5 left-12 w-1 h-2 bg-wood-dark opacity-12 shadow-sm"></div>
+          <div className="absolute top-7 left-12 w-3 h-1 bg-wood-medium opacity-10 shadow-sm"></div>
+          
+          {/* Right side footer shelves */}
           <div className="absolute top-6 right-12 w-4 h-1 bg-wood-accent opacity-15 shadow-sm"></div>
           <div className="absolute top-6 right-12 w-1 h-3 bg-wood-dark opacity-20 shadow-sm"></div>
           <div className="absolute top-9 right-12 w-4 h-1 bg-wood-accent opacity-15 shadow-sm"></div>
+          
+          <div className="absolute top-7 right-8 w-3 h-1 bg-wood-light opacity-12 shadow-sm"></div>
+          <div className="absolute top-7 right-8 w-1 h-2 bg-wood-dark opacity-15 shadow-sm"></div>
+          <div className="absolute top-9 right-8 w-3 h-1 bg-wood-light opacity-12 shadow-sm"></div>
+          
+          <div className="absolute top-8 right-16 w-2 h-1 bg-wood-medium opacity-10 shadow-sm"></div>
+          <div className="absolute top-8 right-16 w-1 h-1 bg-wood-dark opacity-12 shadow-sm"></div>
+          <div className="absolute top-9 right-16 w-2 h-1 bg-wood-medium opacity-10 shadow-sm"></div>
+          
+          {/* Center footer elements */}
+          <div className="absolute top-5 left-1/2 transform -translate-x-1/2 w-8 h-1 bg-wood-accent opacity-12 shadow-sm"></div>
+          <div className="absolute top-5 left-1/2 transform -translate-x-1/2 w-1 h-3 bg-wood-dark opacity-15 shadow-sm"></div>
+          <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-8 h-1 bg-wood-accent opacity-12 shadow-sm"></div>
+          
+          <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-6 h-1 bg-wood-light opacity-10 shadow-sm"></div>
+          <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-1 h-2 bg-wood-dark opacity-12 shadow-sm"></div>
+          <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-6 h-1 bg-wood-light opacity-10 shadow-sm"></div>
+          
+          {/* Additional small hangers */}
+          <div className="absolute top-6 left-6 w-2 h-1 border-t-2 border-wood-dark opacity-12"></div>
+          <div className="absolute top-6 left-10 w-2 h-1 border-t-2 border-wood-dark opacity-12"></div>
+          
+          <div className="absolute top-7 right-10 w-2 h-1 border-t-2 border-wood-dark opacity-12"></div>
+          <div className="absolute top-7 right-14 w-2 h-1 border-t-2 border-wood-dark opacity-12"></div>
+          
+          <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-1 h-1 border-t-2 border-wood-dark opacity-10"></div>
+          <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-1 h-1 border-t-2 border-wood-dark opacity-10" style={{left: 'calc(50% + 4px)'}}></div>
+          <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-1 h-1 border-t-2 border-wood-dark opacity-10" style={{left: 'calc(50% - 4px)'}}></div>
         </div>
         
         <div className="container mx-auto max-w-6xl text-center relative z-10">
