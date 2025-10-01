@@ -8,13 +8,13 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Outfitted Brand Colors */
-    --violet-primary: 270 50% 20%;      /* #331A4D */
-    --violet-medium: 270 50% 20%;       /* #331A4D */
-    --violet-light: 270 33% 30%;        /* #4D3366 */
-    --violet-dark: 240 32% 15%;         /* #1A1A33 */
-    --teal-accent: 180 50% 20%;         /* #1A4D4D */
-    --emerald: 140 59% 25%;             /* #1A6633 */
+    /* Outfitted Brand Colors - Enhanced Saturation */
+    --violet-primary: 270 65% 25%;      /* #4A1A66 - Enhanced Violet */
+    --violet-medium: 270 65% 25%;       /* #4A1A66 - Enhanced Violet */
+    --violet-light: 270 55% 35%;        /* #663366 - Enhanced Light Violet */
+    --violet-dark: 240 45% 18%;          /* #2A1A4D - Enhanced Dark Violet */
+    --teal-accent: 180 65% 25%;          /* #1A6666 - Enhanced Teal */
+    --emerald: 140 75% 30%;              /* #2A994D - Enhanced Emerald */
     --danger: 0 60% 50%;                /* #CC3333 */
     
     /* Wood Colors for Shelves */
@@ -33,24 +33,24 @@ All colors MUST be HSL.
     --popover: 240 32% 8%;
     --popover-foreground: 0 0% 98%;
     
-    --primary: 270 50% 20%;
+    --primary: 270 65% 25%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 270 33% 30%;
+    --secondary: 270 55% 35%;
     --secondary-foreground: 0 0% 100%;
     
-    --muted: 240 20% 20%;
-    --muted-foreground: 240 10% 60%;
+    --muted: 240 25% 22%;
+    --muted-foreground: 240 15% 65%;
     
-    --accent: 180 50% 20%;
+    --accent: 180 65% 25%;
     --accent-foreground: 0 0% 100%;
     
     --destructive: 0 60% 50%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 240 20% 18%;
-    --input: 240 20% 18%;
-    --ring: 270 50% 20%;
+    --border: 240 25% 20%;
+    --input: 240 25% 20%;
+    --ring: 270 65% 25%;
     
     --radius: 0.75rem;
 
