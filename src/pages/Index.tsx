@@ -23,24 +23,45 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
-      {/* Minimal wardrobe background pattern */}
+      {/* Wardrobe structure background pattern */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-20 left-8 w-12 h-16 border border-foreground/5 rounded-sm transform rotate-6 opacity-30"></div>
-        <div className="absolute top-32 right-12 w-8 h-20 border border-foreground/5 rounded-sm transform -rotate-3 opacity-25"></div>
-        <div className="absolute top-48 left-1/4 w-10 h-14 border border-foreground/5 rounded-sm transform rotate-12 opacity-20"></div>
-        <div className="absolute top-64 right-1/4 w-6 h-18 border border-foreground/5 rounded-sm transform -rotate-8 opacity-25"></div>
-        <div className="absolute top-80 left-12 w-14 h-12 border border-foreground/5 rounded-sm transform rotate-2 opacity-30"></div>
-        <div className="absolute top-96 right-8 w-9 h-16 border border-foreground/5 rounded-sm transform -rotate-15 opacity-20"></div>
+        {/* Wardrobe shelves */}
+        <div className="absolute top-24 left-12 w-32 h-1 bg-foreground/8 opacity-40"></div>
+        <div className="absolute top-24 left-12 w-1 h-40 bg-foreground/8 opacity-40"></div>
+        <div className="absolute top-64 left-12 w-32 h-1 bg-foreground/8 opacity-40"></div>
+        <div className="absolute top-24 right-16 w-28 h-1 bg-foreground/8 opacity-40"></div>
+        <div className="absolute top-24 right-16 w-1 h-36 bg-foreground/8 opacity-40"></div>
+        <div className="absolute top-60 right-16 w-28 h-1 bg-foreground/8 opacity-40"></div>
         
-        <div className="absolute top-1/3 left-16 w-7 h-20 border border-foreground/5 rounded-sm transform rotate-45 opacity-25"></div>
-        <div className="absolute top-1/2 right-20 w-11 h-15 border border-foreground/5 rounded-sm transform -rotate-25 opacity-30"></div>
-        <div className="absolute top-2/3 left-1/3 w-8 h-18 border border-foreground/5 rounded-sm transform rotate-8 opacity-20"></div>
-        <div className="absolute top-3/4 right-1/3 w-13 h-11 border border-foreground/5 rounded-sm transform -rotate-12 opacity-25"></div>
+        {/* Hangers */}
+        <div className="absolute top-28 left-16 w-8 h-2 border-t border-foreground/6 opacity-30"></div>
+        <div className="absolute top-28 left-20 w-8 h-2 border-t border-foreground/6 opacity-30"></div>
+        <div className="absolute top-28 left-24 w-8 h-2 border-t border-foreground/6 opacity-30"></div>
+        <div className="absolute top-28 left-28 w-8 h-2 border-t border-foreground/6 opacity-30"></div>
         
-        <div className="absolute bottom-32 left-8 w-10 h-16 border border-foreground/5 rounded-sm transform rotate-3 opacity-30"></div>
-        <div className="absolute bottom-20 right-16 w-7 h-22 border border-foreground/5 rounded-sm transform -rotate-6 opacity-20"></div>
-        <div className="absolute bottom-40 left-1/4 w-12 h-14 border border-foreground/5 rounded-sm transform rotate-18 opacity-25"></div>
-        <div className="absolute bottom-60 right-1/4 w-9 h-17 border border-foreground/5 rounded-sm transform -rotate-9 opacity-30"></div>
+        <div className="absolute top-68 left-16 w-8 h-2 border-t border-foreground/6 opacity-30"></div>
+        <div className="absolute top-68 left-20 w-8 h-2 border-t border-foreground/6 opacity-30"></div>
+        <div className="absolute top-68 left-24 w-8 h-2 border-t border-foreground/6 opacity-30"></div>
+        
+        <div className="absolute top-28 right-20 w-8 h-2 border-t border-foreground/6 opacity-30"></div>
+        <div className="absolute top-28 right-24 w-8 h-2 border-t border-foreground/6 opacity-30"></div>
+        <div className="absolute top-28 right-28 w-8 h-2 border-t border-foreground/6 opacity-30"></div>
+        
+        <div className="absolute top-68 right-20 w-8 h-2 border-t border-foreground/6 opacity-30"></div>
+        <div className="absolute top-68 right-24 w-8 h-2 border-t border-foreground/6 opacity-30"></div>
+        
+        {/* Additional wardrobe sections */}
+        <div className="absolute top-1/3 left-1/3 w-24 h-1 bg-foreground/6 opacity-35"></div>
+        <div className="absolute top-1/3 left-1/3 w-1 h-32 bg-foreground/6 opacity-35"></div>
+        <div className="absolute top-1/3 left-1/3 w-24 h-1 bg-foreground/6 opacity-35" style={{top: 'calc(33.33% + 80px)'}}></div>
+        
+        <div className="absolute top-1/3 left-1/3 w-6 h-2 border-t border-foreground/5 opacity-25" style={{top: 'calc(33.33% + 20px)'}}></div>
+        <div className="absolute top-1/3 left-1/3 w-6 h-2 border-t border-foreground/5 opacity-25" style={{top: 'calc(33.33% + 20px)', left: 'calc(33.33% + 8px)'}}></div>
+        <div className="absolute top-1/3 left-1/3 w-6 h-2 border-t border-foreground/5 opacity-25" style={{top: 'calc(33.33% + 20px)', left: 'calc(33.33% + 16px)'}}></div>
+        
+        <div className="absolute top-1/3 left-1/3 w-6 h-2 border-t border-foreground/5 opacity-25" style={{top: 'calc(33.33% + 100px)'}}></div>
+        <div className="absolute top-1/3 left-1/3 w-6 h-2 border-t border-foreground/5 opacity-25" style={{top: 'calc(33.33% + 100px)', left: 'calc(33.33% + 8px)'}}></div>
+        <div className="absolute top-1/3 left-1/3 w-6 h-2 border-t border-foreground/5 opacity-25" style={{top: 'calc(33.33% + 100px)', left: 'calc(33.33% + 16px)'}}></div>
       </div>
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
