@@ -47,15 +47,15 @@ const Index = () => {
       </div>
 
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border animate-slide-down">
         <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center gap-3">
             <img 
               src="/favicon.ico" 
               alt="Outfitted Logo" 
-              className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg"
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg animate-fade-in hover:scale-105 transition-transform duration-200"
             />
-            <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">Outfitted</h1>
+            <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground animate-fade-in" style={{animationDelay: '0.1s'}}>Outfitted</h1>
           </div>
         </div>
       </header>
@@ -66,12 +66,12 @@ const Index = () => {
           <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tight mb-4 sm:mb-6 leading-tight text-foreground">
             <TypingAnimation />
           </h2>
-          <p className="text-sm sm:text-base text-muted-foreground mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-sm sm:text-base text-muted-foreground mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
             Outfitted è l'app che rivoluziona il tuo guardaroba con l'intelligenza artificiale.
           </p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center animate-fade-in-delay px-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center animate-fade-in-up px-4" style={{animationDelay: '0.4s'}}>
             <Button 
               asChild
               size="lg"
@@ -134,33 +134,33 @@ const Index = () => {
         </div>
         
         <div className="container mx-auto max-w-6xl relative z-10">
-          <p className="text-sm sm:text-base text-muted-foreground mb-12 sm:mb-16 max-w-3xl mx-auto text-center leading-relaxed px-4">
+          <p className="text-sm sm:text-base text-muted-foreground mb-12 sm:mb-16 max-w-3xl mx-auto text-center leading-relaxed px-4 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
             Scansiona i tuoi capi, organizza il tuo armadio digitale e ricevi suggerimenti di outfit personalizzati per ogni occasione.
           </p>
           
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 md:gap-16">
             {/* Step 1 - Scansiona */}
-            <div className="text-center space-y-4 sm:space-y-6">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-violet-primary/20 rounded-full flex items-center justify-center mb-4 sm:mb-8">
-                <Camera className="h-6 w-6 sm:h-8 sm:w-8 text-violet-light" strokeWidth={2.5} />
+            <div className="text-center space-y-4 sm:space-y-6 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+              <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-violet-primary/30 rounded-full flex items-center justify-center mb-4 sm:mb-8 animate-bounce-gentle hover:scale-105 transition-all duration-300">
+                <Camera className="h-6 w-6 sm:h-8 sm:w-8 text-violet-primary" strokeWidth={2.5} />
               </div>
-              <h4 className="text-xl sm:text-2xl font-semibold text-foreground">Scansiona</h4>
+              <h4 className="text-xl sm:text-2xl font-semibold text-foreground animate-fade-in-up" style={{animationDelay: '0.2s'}}>Scansiona</h4>
             </div>
 
             {/* Step 2 - Genera */}
-            <div className="text-center space-y-4 sm:space-y-6">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-accent/20 rounded-full flex items-center justify-center mb-4 sm:mb-8">
+            <div className="text-center space-y-4 sm:space-y-6 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+              <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-accent/30 rounded-full flex items-center justify-center mb-4 sm:mb-8 animate-bounce-gentle hover:scale-105 transition-all duration-300">
                 <Sparkles className="h-6 w-6 sm:h-8 sm:w-8 text-teal-accent" strokeWidth={2.5} />
               </div>
-              <h4 className="text-xl sm:text-2xl font-semibold text-foreground">Genera</h4>
+              <h4 className="text-xl sm:text-2xl font-semibold text-foreground animate-fade-in-up" style={{animationDelay: '0.4s'}}>Genera</h4>
             </div>
 
             {/* Step 3 - Indossa */}
-            <div className="text-center space-y-4 sm:space-y-6">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-secondary/20 rounded-full flex items-center justify-center mb-4 sm:mb-8">
+            <div className="text-center space-y-4 sm:space-y-6 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+              <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-secondary/30 rounded-full flex items-center justify-center mb-4 sm:mb-8 animate-bounce-gentle hover:scale-105 transition-all duration-300">
                 <Shirt className="h-6 w-6 sm:h-8 sm:w-8 text-secondary" strokeWidth={2.5} />
               </div>
-              <h4 className="text-xl sm:text-2xl font-semibold text-foreground">Indossa</h4>
+              <h4 className="text-xl sm:text-2xl font-semibold text-foreground animate-fade-in-up" style={{animationDelay: '0.6s'}}>Indossa</h4>
             </div>
           </div>
         </div>
@@ -180,7 +180,7 @@ const Index = () => {
         </div>
         
         <div className="container mx-auto max-w-6xl text-center relative z-10">
-          <p className="text-xs sm:text-sm text-muted-foreground">
+          <p className="text-xs sm:text-sm text-muted-foreground animate-fade-in-up" style={{animationDelay: '0.1s'}}>
             © 2025 Outfitted
           </p>
         </div>
