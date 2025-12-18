@@ -1,13 +1,19 @@
 import { useState, useEffect } from 'react';
 
-const TypingAnimation = () => {
+type Language = "it" | "en";
+
+interface TypingAnimationProps {
+  language?: Language;
+}
+
+const TypingAnimation = ({ language = "it" }: TypingAnimationProps) => {
   const [displayText, setDisplayText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
   const [isComplete, setIsComplete] = useState(false);
   const [animationPhase, setAnimationPhase] = useState<'typing' | 'error' | 'correcting' | 'retyping' | 'done'>('typing');
 
   useEffect(() => {
-    const correctText = "SCARICA L'APP";
+    const correctText = language === "it" ? "SCARICA L'APP" : "DOWNLOAD APP";
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     
     // Genera una posizione casuale per l'errore (escludendo la prima lettera)
@@ -87,7 +93,7 @@ const TypingAnimation = () => {
       if (interval) clearInterval(interval);
       if (cursorInterval) clearInterval(cursorInterval);
     };
-  }, []);
+  }, [language]);
 
   return (
     <span className="typing-animation">
