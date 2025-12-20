@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Sparkles, Camera, Shirt, Mail, Languages } from "lucide-react";
+import { Sparkles, Camera, Shirt, Mail, Languages, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import TypingAnimation from "@/components/TypingAnimation";
+import { Link } from "react-router-dom";
 
 type Language = "it" | "en";
 
@@ -19,6 +20,8 @@ const translations = {
     contactDescription: "Per assistenza, domande o supporto, contattaci via email. Siamo qui per aiutarti!",
     support: "Supporto",
     contactLabel: "Contatta Outfitted via email",
+    help: "Aiuto",
+    helpCenter: "Centro Assistenza",
   },
   en: {
     heroDescription: "Outfitted is the app that revolutionizes your wardrobe with artificial intelligence.",
@@ -33,6 +36,8 @@ const translations = {
     contactDescription: "For assistance, questions or support, contact us via email. We're here to help!",
     support: "Support",
     contactLabel: "Contact Outfitted via email",
+    help: "Help",
+    helpCenter: "Help Center",
   },
 };
 
@@ -98,16 +103,29 @@ const Index = () => {
               />
               <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground animate-fade-in" style={{animationDelay: '0.1s'}}>Outfitted</h1>
             </div>
-            <Button
-              onClick={toggleLanguage}
-              variant="ghost"
-              size="sm"
-              className="gap-2 text-muted-foreground hover:text-foreground animate-fade-in"
-              aria-label={language === "it" ? "Switch to English" : "Passa all'italiano"}
-            >
-              <Languages className="h-4 w-4 sm:h-5 sm:w-5" />
-              <span className="text-sm sm:text-base font-medium">{language === "it" ? "EN" : "IT"}</span>
-            </Button>
+            <div className="flex items-center gap-2">
+              <Button
+                asChild
+                variant="ghost"
+                size="sm"
+                className="gap-2 text-muted-foreground hover:text-foreground animate-fade-in"
+              >
+                <Link to="/help">
+                  <HelpCircle className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <span className="hidden sm:inline text-sm sm:text-base font-medium">{t.help}</span>
+                </Link>
+              </Button>
+              <Button
+                onClick={toggleLanguage}
+                variant="ghost"
+                size="sm"
+                className="gap-2 text-muted-foreground hover:text-foreground animate-fade-in"
+                aria-label={language === "it" ? "Switch to English" : "Passa all'italiano"}
+              >
+                <Languages className="h-4 w-4 sm:h-5 sm:w-5" />
+                <span className="text-sm sm:text-base font-medium">{language === "it" ? "EN" : "IT"}</span>
+              </Button>
+            </div>
           </div>
         </div>
       </header>
@@ -242,14 +260,27 @@ const Index = () => {
             </p>
             
             <div className="flex flex-col items-center justify-center space-y-4">
-              <a 
-                href="mailto:outfitted.help@gmail.com"
-                className="inline-flex items-center gap-3 px-6 sm:px-8 py-4 sm:py-5 bg-primary hover:bg-violet-light text-primary-foreground font-medium text-base sm:text-lg rounded-full transition-all hover:scale-105 shadow-lg hover:shadow-xl"
-                aria-label={t.contactLabel}
-              >
-                <Mail className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.5} />
-                <span className="font-semibold">outfitted.help@gmail.com</span>
-              </a>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center">
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="gap-3 px-6 sm:px-8 py-4 sm:py-5 text-base sm:text-lg rounded-full transition-all hover:scale-105 w-full sm:w-auto"
+                >
+                  <Link to="/help">
+                    <HelpCircle className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.5} />
+                    <span className="font-semibold">{t.helpCenter}</span>
+                  </Link>
+                </Button>
+                <a 
+                  href="mailto:outfitted.help@gmail.com"
+                  className="inline-flex items-center gap-3 px-6 sm:px-8 py-4 sm:py-5 bg-primary hover:bg-violet-light text-primary-foreground font-medium text-base sm:text-lg rounded-full transition-all hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto justify-center"
+                  aria-label={t.contactLabel}
+                >
+                  <Mail className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.5} />
+                  <span className="font-semibold">outfitted.help@gmail.com</span>
+                </a>
+              </div>
               
               <p className="text-xs sm:text-sm text-muted-foreground mt-2">
                 {t.support}
