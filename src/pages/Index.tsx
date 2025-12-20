@@ -1,8 +1,9 @@
-import { useState } from "react";
 import { Sparkles, Camera, Shirt, Mail, Languages, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import TypingAnimation from "@/components/TypingAnimation";
 import { Link } from "react-router-dom";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type Language = "it" | "en";
 
@@ -22,6 +23,35 @@ const translations = {
     contactLabel: "Contatta Outfitted via email",
     help: "Aiuto",
     helpCenter: "Centro Assistenza",
+    faqTitle: "Domande Frequenti",
+    faqSubtitle: "Trova risposte alle domande più comuni su Outfitted",
+    viewAllFaqs: "Vedi tutte le FAQ",
+    faqs: [
+      {
+        question: "L'app raccoglie i miei dati personali?",
+        answer: "No, assolutamente no. Outfitted non raccoglie, non memorizza e non condivide alcun dato personale. Tutti i dati vengono elaborati esclusivamente sul tuo dispositivo e non vengono mai inviati a server esterni."
+      },
+      {
+        question: "Ho bisogno di una connessione internet per usare l'app?",
+        answer: "No, Outfitted funziona completamente offline. Tutte le funzionalità di intelligenza artificiale vengono eseguite direttamente sul tuo dispositivo, quindi puoi usare l'app anche senza connessione internet."
+      },
+      {
+        question: "Le mie foto vengono caricate su server esterni?",
+        answer: "No, tutte le foto dei tuoi capi vengono elaborate esclusivamente sul tuo dispositivo. Non vengono mai inviate a server esterni o condivise con terze parti."
+      },
+      {
+        question: "Come funziona Outfitted?",
+        answer: "Outfitted ti permette di scansionare i tuoi capi d'abbigliamento con la fotocamera del tuo iPhone, organizzarli nel tuo armadio digitale e ricevere suggerimenti di outfit personalizzati per ogni occasione utilizzando l'intelligenza artificiale."
+      },
+      {
+        question: "L'app utilizza cookie o tracker?",
+        answer: "No, Outfitted non utilizza cookie, tracker o tecnologie di monitoraggio. La tua attività nell'app rimane completamente privata e anonima."
+      },
+      {
+        question: "Come posso eliminare i miei dati?",
+        answer: "Puoi eliminare tutti i dati dell'app in qualsiasi momento dalle impostazioni dell'app sul tuo iPhone. Una volta eliminati, i dati vengono rimossi permanentemente dal tuo dispositivo."
+      }
+    ]
   },
   en: {
     heroDescription: "Outfitted is the app that revolutionizes your wardrobe with artificial intelligence.",
@@ -38,16 +68,41 @@ const translations = {
     contactLabel: "Contact Outfitted via email",
     help: "Help",
     helpCenter: "Help Center",
+    faqTitle: "Frequently Asked Questions",
+    faqSubtitle: "Find answers to the most common questions about Outfitted",
+    viewAllFaqs: "View all FAQs",
+    faqs: [
+      {
+        question: "Does the app collect my personal data?",
+        answer: "No, absolutely not. Outfitted does not collect, store, or share any personal data. All data is processed exclusively on your device and is never sent to external servers."
+      },
+      {
+        question: "Do I need an internet connection to use the app?",
+        answer: "No, Outfitted works completely offline. All artificial intelligence features are executed directly on your device, so you can use the app even without an internet connection."
+      },
+      {
+        question: "Are my photos uploaded to external servers?",
+        answer: "No, all photos of your clothing items are processed exclusively on your device. They are never sent to external servers or shared with third parties."
+      },
+      {
+        question: "How does Outfitted work?",
+        answer: "Outfitted allows you to scan your clothing items with your iPhone's camera, organize them in your digital wardrobe, and receive personalized outfit suggestions for every occasion using artificial intelligence."
+      },
+      {
+        question: "Does the app use cookies or trackers?",
+        answer: "No, Outfitted does not use cookies, trackers, or monitoring technologies. Your activity in the app remains completely private and anonymous."
+      },
+      {
+        question: "How can I delete my data?",
+        answer: "You can delete all app data at any time from the app settings on your iPhone. Once deleted, the data is permanently removed from your device."
+      }
+    ]
   },
 };
 
 const Index = () => {
-  const [language, setLanguage] = useState<Language>("it");
+  const { language, toggleLanguage } = useLanguage();
   const t = translations[language];
-
-  const toggleLanguage = () => {
-    setLanguage(language === "it" ? "en" : "it");
-  };
   return (
     <div className="min-h-screen bg-background relative">
       {/* Wooden Wardrobe Shelves Background */}
@@ -232,6 +287,66 @@ const Index = () => {
               </div>
               <h4 className="text-xl sm:text-2xl font-semibold text-foreground animate-fade-in-up" style={{animationDelay: '0.6s'}}>{t.wear}</h4>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 sm:py-32 px-4 sm:px-6 relative z-20">
+        {/* Additional wooden wardrobe elements */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
+          <div className="absolute top-10 left-10 w-12 h-1 bg-wood-light opacity-25 shadow-sm"></div>
+          <div className="absolute top-10 left-10 w-1 h-16 bg-wood-dark opacity-30 shadow-sm"></div>
+          <div className="absolute top-26 left-10 w-12 h-1 bg-wood-light opacity-25 shadow-sm"></div>
+          
+          <div className="absolute top-16 right-12 w-10 h-1 bg-wood-light opacity-25 shadow-sm"></div>
+          <div className="absolute top-16 right-12 w-1 h-12 bg-wood-dark opacity-30 shadow-sm"></div>
+          <div className="absolute top-28 right-12 w-10 h-1 bg-wood-light opacity-25 shadow-sm"></div>
+          
+          <div className="absolute bottom-20 left-1/4 w-8 h-1 bg-wood-accent opacity-20 shadow-sm"></div>
+          <div className="absolute bottom-20 left-1/4 w-1 h-8 bg-wood-dark opacity-25 shadow-sm"></div>
+          <div className="absolute bottom-28 left-1/4 w-8 h-1 bg-wood-accent opacity-20 shadow-sm"></div>
+          
+          <div className="absolute bottom-16 right-1/4 w-6 h-1 bg-wood-accent opacity-20 shadow-sm"></div>
+          <div className="absolute bottom-16 right-1/4 w-1 h-6 bg-wood-dark opacity-25 shadow-sm"></div>
+          <div className="absolute bottom-22 right-1/4 w-6 h-1 bg-wood-accent opacity-20 shadow-sm"></div>
+        </div>
+        
+        <div className="container mx-auto max-w-4xl relative z-10">
+          <div className="text-center mb-8 sm:mb-12 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6">
+              {t.faqTitle}
+            </h3>
+            <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4">
+              {t.faqSubtitle}
+            </p>
+          </div>
+          
+          <Accordion type="single" collapsible className="w-full space-y-4 mb-8 sm:mb-12">
+            {t.faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`} className="bg-card border border-border rounded-lg px-4 sm:px-6 animate-fade-in-up" style={{animationDelay: `${0.2 + index * 0.1}s`}}>
+                <AccordionTrigger className="text-left text-base sm:text-lg font-semibold text-foreground hover:no-underline py-4 sm:py-6">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-sm sm:text-base text-muted-foreground leading-relaxed pb-4 sm:pb-6">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+          
+          <div className="text-center animate-fade-in-up" style={{animationDelay: '0.8s'}}>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="gap-3 px-6 sm:px-8 py-4 sm:py-5 text-base sm:text-lg rounded-full transition-all hover:scale-105"
+            >
+              <Link to="/help">
+                <HelpCircle className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.5} />
+                <span className="font-semibold">{t.viewAllFaqs}</span>
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

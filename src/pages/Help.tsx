@@ -1,8 +1,8 @@
-import { useState } from "react";
 import { HelpCircle, Shield, Mail, ArrowLeft, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type Language = "it" | "en";
 
@@ -134,12 +134,8 @@ const translations = {
 };
 
 const Help = () => {
-  const [language, setLanguage] = useState<Language>("it");
+  const { language, toggleLanguage } = useLanguage();
   const t = translations[language];
-
-  const toggleLanguage = () => {
-    setLanguage(language === "it" ? "en" : "it");
-  };
 
   return (
     <div className="min-h-screen bg-background relative">
