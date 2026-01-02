@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import Index from "./pages/Index";
 import Help from "./pages/Help";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import PrivacyPolicyEN from "./pages/PrivacyPolicyEN";
 import PrivacyPolicyIT from "./pages/PrivacyPolicyIT";
 import TermsOfServiceEN from "./pages/TermsOfServiceEN";
@@ -24,8 +26,10 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/help" element={<Help />} />
+            <Route path="/privacy" element={<Privacy />} />
             <Route path="/privacy_en" element={<PrivacyPolicyEN />} />
             <Route path="/privacy_it" element={<PrivacyPolicyIT />} />
+            <Route path="/tos" element={<Terms />} />
             <Route path="/tos_en" element={<TermsOfServiceEN />} />
             <Route path="/tos_it" element={<TermsOfServiceIT />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

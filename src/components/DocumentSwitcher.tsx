@@ -10,14 +10,16 @@ const DocumentSwitcher = () => {
 
   // Determina il tipo di documento corrente
   const currentDoc: DocumentType = location.pathname.includes("privacy") ? "privacy" : "tos";
+  // Se il path è esattamente /privacy o /tos, è inglese (default)
+  // Se contiene _it, è italiano
   const currentLang: Language = location.pathname.includes("_it") ? "it" : "en";
 
   // Funzione per ottenere il link corretto
   const getLink = (doc: DocumentType, lang: Language) => {
     if (doc === "privacy") {
-      return lang === "it" ? "/privacy_it" : "/privacy_en";
+      return lang === "it" ? "/privacy_it" : "/privacy";
     } else {
-      return lang === "it" ? "/tos_it" : "/tos_en";
+      return lang === "it" ? "/tos_it" : "/tos";
     }
   };
 
