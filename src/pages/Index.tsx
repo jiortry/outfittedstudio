@@ -26,6 +26,8 @@ const translations = {
     faqTitle: "Domande Frequenti",
     faqSubtitle: "Trova risposte alle domande più comuni su Outfitted",
     viewAllFaqs: "Vedi tutte le FAQ",
+    privacyPolicy: "Privacy Policy",
+    termsOfService: "Termini di Servizio",
     faqs: [
       {
         question: "L'app raccoglie i miei dati personali?",
@@ -71,6 +73,8 @@ const translations = {
     faqTitle: "Frequently Asked Questions",
     faqSubtitle: "Find answers to the most common questions about Outfitted",
     viewAllFaqs: "View all FAQs",
+    privacyPolicy: "Privacy Policy",
+    termsOfService: "Terms of Service",
     faqs: [
       {
         question: "Does the app collect my personal data?",
@@ -401,6 +405,38 @@ const Index = () => {
                 {t.support}
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Legal Documents Section */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 relative z-20 border-t border-border">
+        <div className="container mx-auto max-w-4xl">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+            <Button
+              asChild
+              variant="ghost"
+              size="lg"
+              className="gap-2 px-6 sm:px-8 py-4 sm:py-5 text-sm sm:text-base rounded-full transition-all hover:scale-105 hover:bg-muted"
+            >
+              <Link to="/privacy">
+                <span className="font-medium text-foreground">{t.privacyPolicy}</span>
+              </Link>
+            </Button>
+            
+            {/* Separator dot */}
+            <div className="w-2 h-2 rounded-full bg-muted-foreground/40 flex-shrink-0"></div>
+            
+            <Button
+              asChild
+              variant="ghost"
+              size="lg"
+              className="gap-2 px-6 sm:px-8 py-4 sm:py-5 text-sm sm:text-base rounded-full transition-all hover:scale-105 hover:bg-muted"
+            >
+              <Link to="/tos">
+                <span className="font-medium text-foreground">{t.termsOfService}</span>
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
