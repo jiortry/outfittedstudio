@@ -107,6 +107,11 @@ const translations = {
 const Index = () => {
   const { language, toggleLanguage } = useLanguage();
   const t = translations[language];
+  
+  // Link App Store basato sulla lingua
+  const appStoreLink = language === "it" 
+    ? "https://apps.apple.com/it/app/outfitted/id6753338218"
+    : "https://apps.apple.com/us/app/outfitted/id6753338218";
   return (
     <div className="min-h-screen bg-background relative">
       {/* Wooden Wardrobe Shelves Background */}
@@ -207,7 +212,7 @@ const Index = () => {
               className="bg-primary hover:bg-violet-light text-primary-foreground font-medium px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full transition-all hover:scale-105 w-full sm:w-auto"
               aria-label={language === "it" ? "Scarica Outfitted per iPhone" : "Download Outfitted for iPhone"}
             >
-              <a href="">
+              <a href={appStoreLink} target="_blank" rel="noopener noreferrer">
                 <img 
                   src="/apple-white.svg" 
                   alt="Apple Logo" 
