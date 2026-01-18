@@ -20,6 +20,7 @@ Quando utilizzi Outfitted, potresti fornirci le seguenti informazioni:
   - Indirizzo email (obbligatorio per la registrazione)
   - Password (crittografata e mai memorizzata in chiaro)
   - Nome visualizzato (opzionale)
+  - Informazioni da Google OAuth (email e informazioni di base del profilo se utilizzi questo metodo di accesso)
   - Informazioni da Apple Sign In (se utilizzi questo metodo di accesso)
 
 - **Preferenze Utente**:
@@ -42,7 +43,8 @@ Quando utilizzi Outfitted, potresti fornirci le seguenti informazioni:
 
 ### 2.3 Informazioni da Terze Parti
 
-- **Integrazione**: Se scegli di accedere con Sign in with Apple, riceveremo le informazioni base condivise da Apple.
+- **Google OAuth**: Se scegli di accedere con Google OAuth, riceveremo il tuo indirizzo email e informazioni di base del profilo (come nome e immagine del profilo) dal tuo account Google.
+- **Apple Sign In**: Se scegli di accedere con Sign in with Apple, riceveremo le informazioni base condivise da Apple.
 
 ## 3. Come Utilizziamo le Tue Informazioni
 
@@ -161,6 +163,7 @@ Hai i seguenti diritti riguardo ai tuoi dati personali:
 
 - **Notifiche**: Puoi disabilitare le notifiche push in qualsiasi momento (Impostazioni > Notifiche o Impostazioni iOS)
 - **Accesso alla Fotocamera/Galleria**: Puoi revocare i permessi tramite Impostazioni iOS
+- **Google OAuth**: Puoi disconnettere il tuo account Google tramite le impostazioni dell'app o le impostazioni dell'account Google
 - **Sign in with Apple**: Puoi disconnettere il tuo Apple ID tramite le impostazioni Apple
 
 ### 6.5 Diritti GDPR (Per Utenti UE)
@@ -222,7 +225,7 @@ Puoi revocare il tuo consenso in qualsiasi momento senza influire sulla legalit√
 Per domande, richieste o preoccupazioni riguardo a questa Informativa sulla Privacy o alle nostre pratiche sui dati, contattaci:
 
 **Sviluppatore**: Gennaro Panunzio  
-**Email**: gennaro.panunzio@gmail.com  
+**Email**: outfitted.help@gmail.com  
 **App**: Outfitted - Gestione Guardaroba Digitale
 
 **Tempi di Risposta**: Faremo del nostro meglio per rispondere a tutte le richieste entro 30 giorni (o entro i termini previsti dal GDPR se applicabile).

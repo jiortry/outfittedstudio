@@ -20,6 +20,7 @@ When using Outfitted, you may provide us with the following information:
   - Email address (required for registration)
   - Password (encrypted and never stored in plain text)
   - Display name (optional)
+  - Information from Google OAuth (email and basic profile information if you use this login method)
   - Information from Apple Sign In (if you use this login method)
 
 - **User Preferences**:
@@ -42,7 +43,8 @@ When using Outfitted, you may provide us with the following information:
 
 ### 2.3 Information from Third Parties
 
-- **Integration**: If you choose to sign in with Apple Sign In, we will receive basic information shared by Apple.
+- **Google OAuth**: If you choose to sign in with Google OAuth, we will receive your email address and basic profile information (such as name and profile picture) from your Google account.
+- **Apple Sign In**: If you choose to sign in with Apple Sign In, we will receive basic information shared by Apple.
 
 ## 3. How We Use Your Information
 
@@ -161,6 +163,7 @@ You have the following rights regarding your personal data:
 
 - **Notifications**: You can disable push notifications at any time (Settings > Notifications or iOS Settings)
 - **Camera/Gallery Access**: You can revoke permissions via iOS Settings
+- **Google OAuth**: You can disconnect your Google account via the app settings or Google account settings
 - **Sign in with Apple**: You can disconnect your Apple ID via Apple settings
 
 ### 6.5 GDPR Rights (For EU Users)
@@ -222,7 +225,7 @@ You can withdraw your consent at any time without affecting the lawfulness of pr
 For questions, requests, or concerns regarding this Privacy Policy or our data practices, contact us:
 
 **Developer**: Gennaro Panunzio  
-**Email**: gennaro.panunzio@gmail.com  
+**Email**: outfitted.help@gmail.com  
 **App**: Outfitted - Digital Wardrobe Management
 
 **Response Time**: We will do our best to respond to all requests within 30 days (or within the timeframes required by GDPR if applicable).
