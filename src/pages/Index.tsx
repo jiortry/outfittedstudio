@@ -459,9 +459,17 @@ const Index = () => {
           <div className="absolute top-9 right-12 w-4 h-1 bg-wood-accent opacity-15 shadow-sm"></div>
         </div>
         
-        <div className="container mx-auto max-w-6xl text-center relative z-10">
+        <div className="container mx-auto max-w-6xl text-center relative z-10 space-y-2">
           <p className="text-xs sm:text-sm text-muted-foreground animate-fade-in-up" style={{animationDelay: '0.1s'}}>
             © 2025 Outfitted
+          </p>
+          <p className="text-[10px] sm:text-xs text-muted-foreground/70 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+            <Link 
+              to="/privacy" 
+              className="hover:text-muted-foreground transition-colors underline underline-offset-2"
+            >
+              {t.privacyPolicy}
+            </Link>
           </p>
         </div>
       </footer>
