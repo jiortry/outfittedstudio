@@ -478,29 +478,10 @@ const Index = () => {
           <div className="absolute top-9 right-12 w-4 h-1 bg-wood-accent opacity-15 shadow-sm"></div>
         </div>
         
-        <div className="container mx-auto max-w-6xl text-center relative z-10 space-y-3">
+        <div className="container mx-auto max-w-6xl text-center relative z-10">
           <p className="text-xs sm:text-sm text-muted-foreground animate-fade-in-up" style={{animationDelay: '0.1s'}}>
             © 2025 Outfitted
           </p>
-          {/* Additional links in footer for compliance - visible without login */}
-          {/* Using HTML anchor tags instead of React Router Link so crawlers can detect the links */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm">
-            <a 
-              href="https://outfittedstudio.it/privacy" 
-              className="text-muted-foreground hover:text-foreground underline underline-offset-4 transition-colors"
-              aria-label={language === "it" ? "Privacy Policy" : "Privacy Policy"}
-            >
-              {t.privacyPolicy}
-            </a>
-            <span className="text-muted-foreground/40">•</span>
-            <a 
-              href="https://outfittedstudio.it/tos" 
-              className="text-muted-foreground hover:text-foreground underline underline-offset-4 transition-colors"
-              aria-label={language === "it" ? "Termini di Servizio" : "Terms of Service"}
-            >
-              {t.termsOfService}
-            </a>
-          </div>
         </div>
       </footer>
     </div>
