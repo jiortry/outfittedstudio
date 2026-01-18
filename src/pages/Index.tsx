@@ -167,7 +167,25 @@ const Index = () => {
               />
               <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground animate-fade-in" style={{animationDelay: '0.1s'}}>Outfitted</h1>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
+              {/* Privacy Policy and Terms links - using HTML anchors for crawler visibility */}
+              <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] xs:text-xs sm:text-sm">
+                <a 
+                  href="https://outfittedstudio.it/privacy" 
+                  className="text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2 sm:underline-offset-4 whitespace-nowrap"
+                  aria-label={language === "it" ? "Privacy Policy" : "Privacy Policy"}
+                >
+                  {t.privacyPolicy}
+                </a>
+                <span className="text-muted-foreground/40">•</span>
+                <a 
+                  href="https://outfittedstudio.it/tos" 
+                  className="text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2 sm:underline-offset-4 whitespace-nowrap"
+                  aria-label={language === "it" ? "Termini di Servizio" : "Terms of Service"}
+                >
+                  {t.termsOfService}
+                </a>
+              </div>
               <Button
                 asChild
                 variant="ghost"
