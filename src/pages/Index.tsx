@@ -414,8 +414,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Legal Documents Section */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 relative z-20 border-t border-border">
+      {/* Legal Documents Section - Visible without login, required for app verification */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 relative z-20 border-t border-border bg-muted/20">
         <div className="container mx-auto max-w-4xl">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
             <Button
@@ -424,7 +424,7 @@ const Index = () => {
               size="lg"
               className="gap-2 px-6 sm:px-8 py-4 sm:py-5 text-sm sm:text-base rounded-full transition-all hover:scale-105 hover:bg-muted"
             >
-              <Link to="/privacy">
+              <Link to="/privacy" aria-label={language === "it" ? "Privacy Policy" : "Privacy Policy"}>
                 <span className="font-medium text-foreground">{t.privacyPolicy}</span>
               </Link>
             </Button>
@@ -438,7 +438,7 @@ const Index = () => {
               size="lg"
               className="gap-2 px-6 sm:px-8 py-4 sm:py-5 text-sm sm:text-base rounded-full transition-all hover:scale-105 hover:bg-muted"
             >
-              <Link to="/tos">
+              <Link to="/tos" aria-label={language === "it" ? "Termini di Servizio" : "Terms of Service"}>
                 <span className="font-medium text-foreground">{t.termsOfService}</span>
               </Link>
             </Button>
@@ -459,18 +459,28 @@ const Index = () => {
           <div className="absolute top-9 right-12 w-4 h-1 bg-wood-accent opacity-15 shadow-sm"></div>
         </div>
         
-        <div className="container mx-auto max-w-6xl text-center relative z-10 space-y-2">
+        <div className="container mx-auto max-w-6xl text-center relative z-10 space-y-3">
           <p className="text-xs sm:text-sm text-muted-foreground animate-fade-in-up" style={{animationDelay: '0.1s'}}>
             © 2025 Outfitted
           </p>
-          <p className="text-[10px] sm:text-xs text-muted-foreground/70 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+          {/* Additional links in footer for compliance - visible without login */}
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm">
             <Link 
               to="/privacy" 
-              className="hover:text-muted-foreground transition-colors underline underline-offset-2"
+              className="text-muted-foreground hover:text-foreground underline underline-offset-4 transition-colors"
+              aria-label={language === "it" ? "Privacy Policy" : "Privacy Policy"}
             >
               {t.privacyPolicy}
             </Link>
-          </p>
+            <span className="text-muted-foreground/40">•</span>
+            <Link 
+              to="/tos" 
+              className="text-muted-foreground hover:text-foreground underline underline-offset-4 transition-colors"
+              aria-label={language === "it" ? "Termini di Servizio" : "Terms of Service"}
+            >
+              {t.termsOfService}
+            </Link>
+          </div>
         </div>
       </footer>
     </div>
