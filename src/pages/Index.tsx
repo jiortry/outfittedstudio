@@ -415,6 +415,7 @@ const Index = () => {
       </section>
 
       {/* Legal Documents Section - Visible without login, required for app verification */}
+      {/* Using HTML anchor tags instead of React Router Link so crawlers can detect the links */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 relative z-20 border-t border-border bg-muted/20">
         <div className="container mx-auto max-w-4xl">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
@@ -424,9 +425,9 @@ const Index = () => {
               size="lg"
               className="gap-2 px-6 sm:px-8 py-4 sm:py-5 text-sm sm:text-base rounded-full transition-all hover:scale-105 hover:bg-muted"
             >
-              <Link to="/privacy" aria-label={language === "it" ? "Privacy Policy" : "Privacy Policy"}>
+              <a href="https://outfittedstudio.it/privacy" aria-label={language === "it" ? "Privacy Policy" : "Privacy Policy"}>
                 <span className="font-medium text-foreground">{t.privacyPolicy}</span>
-              </Link>
+              </a>
             </Button>
             
             {/* Separator dot */}
@@ -438,9 +439,9 @@ const Index = () => {
               size="lg"
               className="gap-2 px-6 sm:px-8 py-4 sm:py-5 text-sm sm:text-base rounded-full transition-all hover:scale-105 hover:bg-muted"
             >
-              <Link to="/tos" aria-label={language === "it" ? "Termini di Servizio" : "Terms of Service"}>
+              <a href="https://outfittedstudio.it/tos" aria-label={language === "it" ? "Termini di Servizio" : "Terms of Service"}>
                 <span className="font-medium text-foreground">{t.termsOfService}</span>
-              </Link>
+              </a>
             </Button>
           </div>
         </div>
@@ -464,22 +465,23 @@ const Index = () => {
             © 2025 Outfitted
           </p>
           {/* Additional links in footer for compliance - visible without login */}
+          {/* Using HTML anchor tags instead of React Router Link so crawlers can detect the links */}
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm">
-            <Link 
-              to="/privacy" 
+            <a 
+              href="https://outfittedstudio.it/privacy" 
               className="text-muted-foreground hover:text-foreground underline underline-offset-4 transition-colors"
               aria-label={language === "it" ? "Privacy Policy" : "Privacy Policy"}
             >
               {t.privacyPolicy}
-            </Link>
+            </a>
             <span className="text-muted-foreground/40">•</span>
-            <Link 
-              to="/tos" 
+            <a 
+              href="https://outfittedstudio.it/tos" 
               className="text-muted-foreground hover:text-foreground underline underline-offset-4 transition-colors"
               aria-label={language === "it" ? "Termini di Servizio" : "Terms of Service"}
             >
               {t.termsOfService}
-            </Link>
+            </a>
           </div>
         </div>
       </footer>
