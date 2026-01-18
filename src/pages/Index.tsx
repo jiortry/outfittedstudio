@@ -161,9 +161,9 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <img 
-                src="/favicon.ico" 
+                src="/outfittedicon.png" 
                 alt="Outfitted Logo" 
-                className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg animate-fade-in hover:scale-105 transition-transform duration-200"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg border-2 border-white animate-fade-in hover:scale-105 transition-transform duration-200"
               />
               <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground animate-fade-in" style={{animationDelay: '0.1s'}}>Outfitted</h1>
             </div>
@@ -209,7 +209,7 @@ const Index = () => {
             <Button 
               asChild
               size="lg"
-              className="bg-primary hover:bg-violet-light text-primary-foreground font-medium px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full transition-all hover:scale-105 w-full sm:w-auto"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full transition-all hover:scale-105 w-full sm:w-auto"
               aria-label={language === "it" ? "Scarica Outfitted per iPhone" : "Download Outfitted for iPhone"}
             >
               <a href={appStoreLink} target="_blank" rel="noopener noreferrer">
@@ -275,8 +275,8 @@ const Index = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 md:gap-16">
             {/* Step 1 - Scansiona */}
             <div className="text-center space-y-4 sm:space-y-6 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
-              <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-violet-primary/30 rounded-full flex items-center justify-center mb-4 sm:mb-8 animate-bounce-gentle hover:scale-105 transition-all duration-300">
-                <Camera className="h-6 w-6 sm:h-8 sm:w-8 text-violet-primary" strokeWidth={2.5} />
+              <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-primary/30 rounded-full flex items-center justify-center mb-4 sm:mb-8 animate-bounce-gentle hover:scale-105 transition-all duration-300">
+                <Camera className="h-6 w-6 sm:h-8 sm:w-8 text-primary" strokeWidth={2.5} />
               </div>
               <h4 className="text-xl sm:text-2xl font-semibold text-foreground animate-fade-in-up" style={{animationDelay: '0.2s'}}>{t.scan}</h4>
             </div>
@@ -284,7 +284,7 @@ const Index = () => {
             {/* Step 2 - Genera */}
             <div className="text-center space-y-4 sm:space-y-6 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
               <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-accent/30 rounded-full flex items-center justify-center mb-4 sm:mb-8 animate-bounce-gentle hover:scale-105 transition-all duration-300">
-                <Sparkles className="h-6 w-6 sm:h-8 sm:w-8 text-teal-accent" strokeWidth={2.5} />
+                <Sparkles className="h-6 w-6 sm:h-8 sm:w-8 text-accent" strokeWidth={2.5} />
               </div>
               <h4 className="text-xl sm:text-2xl font-semibold text-foreground animate-fade-in-up" style={{animationDelay: '0.4s'}}>{t.generate}</h4>
             </div>
@@ -398,7 +398,7 @@ const Index = () => {
                 </Button>
                 <a 
                   href="mailto:outfitted.help@gmail.com"
-                  className="inline-flex items-center gap-3 px-6 sm:px-8 py-4 sm:py-5 bg-primary hover:bg-violet-light text-primary-foreground font-medium text-base sm:text-lg rounded-full transition-all hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto justify-center"
+                  className="inline-flex items-center gap-3 px-6 sm:px-8 py-4 sm:py-5 bg-primary hover:bg-primary/90 text-primary-foreground font-medium text-base sm:text-lg rounded-full transition-all hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto justify-center"
                   aria-label={t.contactLabel}
                 >
                   <Mail className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.5} />

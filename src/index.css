@@ -8,13 +8,13 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Outfitted Brand Colors - Enhanced Saturation */
-    --violet-primary: 270 65% 25%;      /* #4A1A66 - Enhanced Violet */
-    --violet-medium: 270 65% 25%;       /* #4A1A66 - Enhanced Violet */
-    --violet-light: 270 55% 35%;        /* #663366 - Enhanced Light Violet */
-    --violet-dark: 240 45% 18%;          /* #2A1A4D - Enhanced Dark Violet */
-    --teal-accent: 180 65% 25%;          /* #1A6666 - Enhanced Teal */
-    --emerald: 140 75% 30%;              /* #2A994D - Enhanced Emerald */
+    /* Outfitted Brand Colors - Black and White Only */
+    --violet-primary: 0 0% 0%;          /* Black */
+    --violet-medium: 0 0% 0%;           /* Black */
+    --violet-light: 0 0% 0%;            /* Black */
+    --violet-dark: 0 0% 0%;             /* Black */
+    --teal-accent: 0 0% 0%;             /* Black */
+    --emerald: 0 0% 0%;                 /* Black */
     --danger: 0 60% 50%;                /* #CC3333 */
     
     /* Wood Colors for Shelves */
@@ -33,16 +33,16 @@ All colors MUST be HSL.
     --popover: 240 32% 8%;
     --popover-foreground: 0 0% 98%;
     
-    --primary: 270 65% 25%;
+    --primary: 0 0% 0%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 270 55% 35%;
+    --secondary: 0 0% 0%;
     --secondary-foreground: 0 0% 100%;
     
     --muted: 240 25% 22%;
     --muted-foreground: 240 15% 65%;
     
-    --accent: 180 65% 25%;
+    --accent: 0 0% 0%;
     --accent-foreground: 0 0% 100%;
     
     --destructive: 0 60% 50%;
@@ -50,7 +50,7 @@ All colors MUST be HSL.
     
     --border: 240 25% 20%;
     --input: 240 25% 20%;
-    --ring: 270 65% 25%;
+    --ring: 0 0% 0%;
     
     --radius: 0.75rem;
 
@@ -98,19 +98,19 @@ All colors MUST be HSL.
   }
   
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--violet-primary));
+    background: hsl(var(--primary));
     border-radius: 9999px;
     transition: background 0.2s ease;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--violet-light));
+    background: hsl(var(--primary));
   }
   
   /* Firefox scrollbar */
   * {
     scrollbar-width: thin;
-    scrollbar-color: hsl(var(--violet-primary)) transparent;
+    scrollbar-color: hsl(var(--primary)) transparent;
   }
 }
 

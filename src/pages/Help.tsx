@@ -165,9 +165,9 @@ const Help = () => {
             <div className="flex items-center gap-3">
               <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
                 <img 
-                  src="/favicon.ico" 
+                  src="/outfittedicon.png" 
                   alt="Outfitted Logo" 
-                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg animate-fade-in hover:scale-105 transition-transform duration-200"
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg border-2 border-white animate-fade-in hover:scale-105 transition-transform duration-200"
                 />
                 <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground animate-fade-in" style={{animationDelay: '0.1s'}}>Outfitted</h1>
               </Link>
@@ -305,7 +305,7 @@ const Help = () => {
             </p>
             <a 
               href="mailto:outfitted.help@gmail.com"
-              className="inline-flex items-center gap-3 px-6 sm:px-8 py-4 sm:py-5 bg-primary hover:bg-violet-light text-primary-foreground font-medium text-base sm:text-lg rounded-full transition-all hover:scale-105 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center gap-3 px-6 sm:px-8 py-4 sm:py-5 bg-primary hover:bg-primary/90 text-primary-foreground font-medium text-base sm:text-lg rounded-full transition-all hover:scale-105 shadow-lg hover:shadow-xl"
               aria-label={t.contactLabel}
             >
               <Mail className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.5} />

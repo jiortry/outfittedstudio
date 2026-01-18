@@ -15,9 +15,9 @@ const TermsOfServiceEN = () => {
             <div className="flex items-center gap-3">
               <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
                 <img 
-                  src="/favicon.ico" 
+                  src="/outfittedicon.png" 
                   alt="Outfitted Logo" 
-                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg animate-fade-in hover:scale-105 transition-transform duration-200"
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg border-2 border-white animate-fade-in hover:scale-105 transition-transform duration-200"
                 />
                 <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground animate-fade-in" style={{animationDelay: '0.1s'}}>Outfitted</h1>
               </Link>
@@ -90,5 +90,6 @@ const TermsOfServiceEN = () => {
 };
 
 export default TermsOfServiceEN;
+
 
 
