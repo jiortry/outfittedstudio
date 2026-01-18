@@ -28,28 +28,17 @@
   </head>
 
   <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
     <!-- Static HTML links for crawlers - REQUIRED for app verification -->
-    <!-- These must be present in the initial HTML before React loads -->
-    <!-- Crawlers need to see these links in the raw HTML source -->
-    <footer id="static-footer" style="display: block; text-align: center; padding: 1rem; background: transparent;">
+    <!-- These links MUST be present in the initial HTML source for Google crawler to detect them -->
+    <!-- Do not remove or hide these links - they are required for OAuth consent screen verification -->
+    <!-- Positioned at bottom of page, always visible in HTML source -->
+    <footer style="text-align: center; padding: 1rem; background: transparent; font-size: 0.875rem; margin-top: auto;">
       <a href="https://outfittedstudio.it/privacy" style="color: #3b82f6; text-decoration: underline; margin: 0 0.5rem;">Privacy Policy</a>
       <span style="color: #9ca3af; margin: 0 0.5rem;">•</span>
       <a href="https://outfittedstudio.it/tos" style="color: #3b82f6; text-decoration: underline; margin: 0 0.5rem;">Terms of Service</a>
     </footer>
-    
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    
-    <!-- Hide static footer when React loads to avoid duplicates -->
-    <script>
-      window.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-          var footer = document.getElementById('static-footer');
-          if (footer && document.getElementById('root') && document.getElementById('root').children.length > 0) {
-            footer.style.display = 'none';
-          }
-        }, 100);
-      });
-    </script>
   </body>
 </html>
