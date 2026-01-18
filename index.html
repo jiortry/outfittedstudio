@@ -27,7 +27,7 @@
     <meta name="twitter:image" content="/placeholder.svg" />
     
     <!-- Privacy Policy link for crawlers - REQUIRED for app verification -->
-    <link rel="privacy-policy" href="https://outfittedstudio.it/privacy" />
+    <link rel="privacy-policy" href="https://outfittedstudio.it/privacy-policy" />
   </head>
 
   <body>
@@ -36,12 +36,22 @@
     <!-- Do not remove or hide these links - they are required for OAuth consent screen verification -->
     <!-- Links positioned at top of body, visible in HTML source for crawlers -->
     <div id="static-privacy-links" style="text-align: center; padding: 0.75rem; background: transparent; font-size: 0.875rem;">
-      <a href="https://outfittedstudio.it/privacy" id="privacy-policy-link" style="color: #3b82f6; text-decoration: underline; margin: 0 0.5rem;">Privacy Policy</a>
+      <a href="https://outfittedstudio.it/privacy-policy" id="privacy-policy-link" style="color: #3b82f6; text-decoration: underline; margin: 0 0.5rem;">Privacy Policy</a>
       <span style="color: #9ca3af; margin: 0 0.5rem;">•</span>
       <a href="https://outfittedstudio.it/tos" id="terms-of-service-link" style="color: #3b82f6; text-decoration: underline; margin: 0 0.5rem;">Terms of Service</a>
     </div>
     
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Static footer for Google crawler - REQUIRED for app verification -->
+    <!-- This footer MUST be present in the initial HTML source with exact structure -->
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="https://outfittedstudio.it/privacy-policy">Privacy Policy</a></li>
+        </ul>
+      </nav>
+    </footer>
   </body>
 </html>
