@@ -276,7 +276,7 @@ const Index = () => {
             {/* Step 1 - Scansiona */}
             <div className="text-center space-y-4 sm:space-y-6 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
               <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-primary/30 rounded-full flex items-center justify-center mb-4 sm:mb-8 animate-bounce-gentle hover:scale-105 transition-all duration-300">
-                <Camera className="h-6 w-6 sm:h-8 sm:w-8 text-primary" strokeWidth={2.5} />
+                <Camera className="h-6 w-6 sm:h-8 sm:w-8 text-white" strokeWidth={2.5} />
               </div>
               <h4 className="text-xl sm:text-2xl font-semibold text-foreground animate-fade-in-up" style={{animationDelay: '0.2s'}}>{t.scan}</h4>
             </div>
@@ -284,7 +284,7 @@ const Index = () => {
             {/* Step 2 - Genera */}
             <div className="text-center space-y-4 sm:space-y-6 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
               <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-accent/30 rounded-full flex items-center justify-center mb-4 sm:mb-8 animate-bounce-gentle hover:scale-105 transition-all duration-300">
-                <Sparkles className="h-6 w-6 sm:h-8 sm:w-8 text-accent" strokeWidth={2.5} />
+                <Sparkles className="h-6 w-6 sm:h-8 sm:w-8 text-white" strokeWidth={2.5} />
               </div>
               <h4 className="text-xl sm:text-2xl font-semibold text-foreground animate-fade-in-up" style={{animationDelay: '0.4s'}}>{t.generate}</h4>
             </div>
@@ -292,7 +292,7 @@ const Index = () => {
             {/* Step 3 - Indossa */}
             <div className="text-center space-y-4 sm:space-y-6 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
               <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-secondary/30 rounded-full flex items-center justify-center mb-4 sm:mb-8 animate-bounce-gentle hover:scale-105 transition-all duration-300">
-                <Shirt className="h-6 w-6 sm:h-8 sm:w-8 text-secondary" strokeWidth={2.5} />
+                <Shirt className="h-6 w-6 sm:h-8 sm:w-8 text-white" strokeWidth={2.5} />
               </div>
               <h4 className="text-xl sm:text-2xl font-semibold text-foreground animate-fade-in-up" style={{animationDelay: '0.6s'}}>{t.wear}</h4>
             </div>
