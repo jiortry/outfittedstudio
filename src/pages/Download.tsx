@@ -9,12 +9,12 @@ type Language = "it" | "en";
 const translations = {
   it: {
     step1: "Clicca i 3 puntini",
-    step2: "Clicca apri nel browser",
+    step2: "Clicca \"apri nel browser\"",
     step3: "Scarica l'app",
   },
   en: {
     step1: "Click the 3 dots",
-    step2: "Click open in browser",
+    step2: "Click \"open in browser\"",
     step3: "Download the app",
   },
 };
