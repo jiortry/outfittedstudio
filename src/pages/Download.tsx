@@ -10,12 +10,12 @@ const translations = {
   it: {
     step1: "Clicca i 3 puntini",
     step2: "Clicca \"apri nel browser\"",
-    step3: "Scarica l'app",
+    step3: "Scarica Outfitted",
   },
   en: {
     step1: "Click the 3 dots",
     step2: "Click \"open in browser\"",
-    step3: "Download the app",
+    step3: "Download Outfitted",
   },
 };
 
@@ -215,13 +215,13 @@ const Download = () => {
         </div>
       </div>
 
-      {/* Switcher di lingua in basso */}
-      <div className="fixed bottom-20 left-1/2 transform -translate-x-1/2 z-[101]">
+      {/* Switcher di lingua - più centrale e responsive */}
+      <div className="fixed bottom-32 sm:bottom-40 left-1/2 transform -translate-x-1/2 z-[101] w-full flex justify-center px-4">
         <Button
           onClick={toggleLanguage}
           variant="outline"
           size="lg"
-          className="gap-2 bg-background/90 backdrop-blur-sm"
+          className="gap-2 bg-background/90 backdrop-blur-sm min-w-[120px]"
           aria-label={language === "it" ? "Switch to English" : "Passa all'italiano"}
         >
           <Languages className="h-5 w-5" />
