@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUp, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -8,14 +8,14 @@ type Language = "it" | "en";
 
 const translations = {
   it: {
-    openInBrowser: "Apri nel Browser",
-    openInBrowserDescription: "Per scaricare l'app, apri questa pagina nel browser del tuo dispositivo (Safari o Chrome).",
-    openInBrowserInstructions: "Clicca sul menu in alto a destra e seleziona 'Apri nel browser' o 'Apri in Safari/Chrome'",
+    step1: "Clicca i 3 puntini",
+    step2: "Clicca apri nel browser",
+    step3: "Scarica l'app",
   },
   en: {
-    openInBrowser: "Open in Browser",
-    openInBrowserDescription: "To download the app, open this page in your device's browser (Safari or Chrome).",
-    openInBrowserInstructions: "Click the menu in the top right corner and select 'Open in browser' or 'Open in Safari/Chrome'",
+    step1: "Click the 3 dots",
+    step2: "Click open in browser",
+    step3: "Download the app",
   },
 };
 
@@ -140,7 +140,7 @@ const isInAppBrowser = (): boolean => {
 };
 
 const Download = () => {
-  const { language } = useLanguage();
+  const { language, toggleLanguage } = useLanguage();
   const t = translations[language];
   const navigate = useNavigate();
   const [isInApp, setIsInApp] = useState<boolean | null>(null);
@@ -174,41 +174,50 @@ const Download = () => {
   // Mostra il messaggio solo se è un browser in-app
   return (
     <div className="min-h-screen bg-background relative">
+      {/* Freccia che indica in alto a destra dello schermo */}
+      <div className="fixed top-4 right-4 z-[101] animate-bounce pointer-events-none">
+        <ArrowUp className="h-16 w-16 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]" strokeWidth={3} />
+      </div>
+
       {/* Messaggio per aprire nel browser - solo su browser in-app */}
       <div className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-sm flex items-center justify-center p-4">
-        <div className="max-w-md w-full bg-card border border-border rounded-lg shadow-lg p-6 space-y-6 text-center">
-          {/* Freccia che indica in alto a destra */}
-          <div className="relative flex justify-end">
-            <div className="absolute -top-8 -right-4 animate-bounce">
-              <ArrowUpRight className="h-12 w-12 text-primary" strokeWidth={2} />
-            </div>
-          </div>
-          
+        <div className="max-w-md w-full bg-card border border-border rounded-lg shadow-lg p-8 space-y-6">
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-foreground">
-              {t.openInBrowser}
+            <h2 className="text-2xl font-bold text-foreground text-center mb-6">
+              {language === "it" ? "Come scaricare l'app" : "How to download the app"}
             </h2>
-            <p className="text-muted-foreground">
-              {t.openInBrowserDescription}
-            </p>
-            <p className="text-sm text-muted-foreground">
-              {t.openInBrowserInstructions}
-            </p>
-          </div>
-          
-          <div className="pt-4">
-            <Button
-              asChild
-              size="lg"
-              className="w-full gap-2"
-            >
-              <a href={window.location.href} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="h-5 w-5" />
-                {t.openInBrowser}
-              </a>
-            </Button>
+            
+            {/* Elenco puntato semplice */}
+            <ul className="space-y-3 text-left">
+              <li className="flex items-start gap-3">
+                <span className="text-primary font-bold text-lg">1.</span>
+                <span className="text-foreground text-base">{t.step1}</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-primary font-bold text-lg">2.</span>
+                <span className="text-foreground text-base">{t.step2}</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-primary font-bold text-lg">3.</span>
+                <span className="text-foreground text-base">{t.step3}</span>
+              </li>
+            </ul>
           </div>
         </div>
+      </div>
+
+      {/* Switcher di lingua in basso */}
+      <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-[101]">
+        <Button
+          onClick={toggleLanguage}
+          variant="outline"
+          size="lg"
+          className="gap-2 bg-background/90 backdrop-blur-sm"
+          aria-label={language === "it" ? "Switch to English" : "Passa all'italiano"}
+        >
+          <Languages className="h-5 w-5" />
+          <span className="font-medium">{language === "it" ? "EN" : "IT"}</span>
+        </Button>
       </div>
     </div>
   );
