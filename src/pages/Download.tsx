@@ -31,9 +31,11 @@ const isStandardBrowser = (): boolean => {
   if (isDesktop) return true;
   
   // Rileva Safari iOS - deve avere Safari e non essere un browser in-app
+  // Escludiamo TikTok che può avere "Mobile Safari" ma anche "BytedanceWebview" o "trill"
   const isIOS = /iphone|ipad|ipod/.test(ua);
   const hasSafari = ua.includes('safari');
-  const isSafariIOS = isIOS && hasSafari && !/crios|fxios/.test(ua) && !ua.includes('wv');
+  const isTikTok = ua.includes('bytedancewebview') || ua.includes('bytelocale') || ua.includes('trill') || ua.includes('appname/trill');
+  const isSafariIOS = isIOS && hasSafari && !/crios|fxios/.test(ua) && !ua.includes('wv') && !isTikTok;
   
   // Rileva Chrome mobile (Android) - deve essere Chrome e non WebView
   const isAndroid = /android/.test(ua);
@@ -69,13 +71,20 @@ const isInAppBrowser = (): boolean => {
   const isIOS = /iphone|ipad|ipod/.test(ua);
   const isAndroid = /android/.test(ua);
   
-  // Rileva browser in-app comuni - pattern più specifici
+  // Pattern specifici per TikTok (molto importanti - TikTok usa questi nel user agent)
+  const tiktokPatterns = [
+    'bytedancewebview',  // BytedanceWebview - segnale tecnico molto specifico di TikTok
+    'bytelocale',        // ByteLocale - locale di ByteDance/TikTok
+    'bytefulllocale',    // ByteFullLocale - locale completo
+    'trill',             // trill - nome bundle di TikTok
+    'tiktok',            // TikTok generico
+    'musical_ly',        // Musical.ly (predecessore di TikTok)
+    'aweme',             // Aweme (TikTok internamente)
+    'sslocal',           // TikTok (pattern alternativo)
+  ];
+  
+  // Rileva browser in-app comuni
   const inAppBrowsers = [
-    'tiktok',           // TikTok
-    'musical_ly',       // Musical.ly (predecessore di TikTok)
-    'aweme',            // Aweme (TikTok internamente)
-    'bytedance',        // ByteDance (proprietario di TikTok)
-    'sslocal',          // TikTok (pattern alternativo)
     'instagram',        // Instagram
     'fban',             // Facebook Android
     'fbios',            // Facebook iOS
@@ -93,39 +102,41 @@ const isInAppBrowser = (): boolean => {
     'micromessenger',   // WeChat (alternativo)
   ];
   
-  // Controlla se è un browser in-app con pattern specifici
-  const isInApp = inAppBrowsers.some(browser => ua.includes(browser));
+  // Controlla prima i pattern TikTok (più specifici)
+  const isTikTok = tiktokPatterns.some(pattern => ua.includes(pattern));
+  
+  // Controlla altri browser in-app
+  const isOtherInApp = inAppBrowsers.some(browser => ua.includes(browser));
+  
+  const isInApp = isTikTok || isOtherInApp;
+  
+  // Se già rilevato come TikTok o altro browser in-app, ritorna true
+  if (isInApp) {
+    return true;
+  }
   
   // Controllo aggiuntivo: WebView su mobile (spesso usato da app social)
   // Se è mobile e contiene "wv" (WebView) ma non è Chrome, probabilmente è in-app
   const isWebView = ua.includes('wv') && !ua.includes('chrome');
   
-  // Controllo per TikTok specifico su iOS: spesso usa WebView senza identificarsi chiaramente
-  // TikTok su iOS può avere pattern come "Version/X.X" senza Safari
+  // Controllo per TikTok specifico su iOS: TikTok può avere pattern come "AppName/trill" nel user agent
+  // Esempio: "Mobile Safari/537.36 trill_430104 AppName/trill ByteLocale/en ... BytedanceWebview/..."
   const hasSafari = ua.includes('safari');
-  const isTikTokLikeIOS = isIOS && !hasSafari && !ua.includes('crios') && !ua.includes('fxios') && !ua.includes('version');
+  const hasTrillInUA = ua.includes('trill') || ua.includes('appname/trill');
   
-  // Controllo per TikTok su Android: spesso usa WebView Android senza identificarsi
-  const isTikTokLikeAndroid = isAndroid && ua.includes('wv') && !ua.includes('chrome');
-  
-  // Controllo aggiuntivo: se è mobile e non ha pattern di browser standard, potrebbe essere in-app
-  // Questo è un fallback per casi edge come TikTok che non si identificano bene
-  if (isMobile) {
-    // Se ha WebView o pattern TikTok-like, è in-app
-    if (isWebView || isTikTokLikeIOS || isTikTokLikeAndroid) {
-      return true;
-    }
-    
-    // Controllo per iOS: se non ha Safari e non è Chrome/Firefox, potrebbe essere in-app
-    if (isIOS && !hasSafari && !ua.includes('crios') && !ua.includes('fxios')) {
-      // Ma escludiamo se ha "version" che indica Safari standard
-      if (!ua.includes('version')) {
-        return true;
-      }
-    }
+  // Se su iOS e ha pattern TikTok ma non Safari standard, è TikTok
+  if (isIOS && hasTrillInUA && !hasSafari) {
+    return true;
   }
   
-  return isInApp;
+  // Controllo per Android: WebView che non è Chrome standard
+  if (isAndroid && isWebView) {
+    return true;
+  }
+  
+  // Fallback: se è mobile e non è un browser standard riconosciuto, potrebbe essere in-app
+  // Ma questo è più conservativo per evitare falsi positivi
+  return false;
 };
 
 const Download = () => {
