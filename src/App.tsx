@@ -12,6 +12,7 @@ import PrivacyPolicyEN from "./pages/PrivacyPolicyEN";
 import PrivacyPolicyIT from "./pages/PrivacyPolicyIT";
 import TermsOfServiceEN from "./pages/TermsOfServiceEN";
 import TermsOfServiceIT from "./pages/TermsOfServiceIT";
+import Download from "./pages/Download";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/help" element={<Help />} />
+            <Route path="/download" element={<Download />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/privacy-policy" element={<Privacy />} />
             <Route path="/privacy_en" element={<PrivacyPolicyEN />} />
