@@ -182,6 +182,15 @@ const Download = () => {
       {/* Messaggio per aprire nel browser - solo su browser in-app */}
       <div className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-sm flex items-center justify-center p-4">
         <div className="max-w-md w-full bg-card border border-border rounded-lg shadow-lg p-8 space-y-6">
+          {/* Logo */}
+          <div className="flex justify-center mb-4">
+            <img 
+              src="/outfittedicon.png" 
+              alt="Outfitted Logo" 
+              className="w-16 h-16 rounded-lg border-2 border-white"
+            />
+          </div>
+          
           <div className="space-y-4">
             <h2 className="text-2xl font-bold text-foreground text-center mb-6">
               {language === "it" ? "Come scaricare l'app" : "How to download the app"}
@@ -190,16 +199,16 @@ const Download = () => {
             {/* Elenco puntato semplice */}
             <ul className="space-y-3 text-left">
               <li className="flex items-start gap-3">
-                <span className="text-primary font-bold text-lg">1.</span>
-                <span className="text-foreground text-base">{t.step1}</span>
+                <span className="text-white font-bold text-lg">1.</span>
+                <span className="text-white text-base">{t.step1}</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-primary font-bold text-lg">2.</span>
-                <span className="text-foreground text-base">{t.step2}</span>
+                <span className="text-white font-bold text-lg">2.</span>
+                <span className="text-white text-base">{t.step2}</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-primary font-bold text-lg">3.</span>
-                <span className="text-foreground text-base">{t.step3}</span>
+                <span className="text-white font-bold text-lg">3.</span>
+                <span className="text-white text-base">{t.step3}</span>
               </li>
             </ul>
           </div>
@@ -207,7 +216,7 @@ const Download = () => {
       </div>
 
       {/* Switcher di lingua in basso */}
-      <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-[101]">
+      <div className="fixed bottom-20 left-1/2 transform -translate-x-1/2 z-[101]">
         <Button
           onClick={toggleLanguage}
           variant="outline"
