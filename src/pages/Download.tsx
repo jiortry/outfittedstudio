@@ -19,44 +19,6 @@ const translations = {
   },
 };
 
-// Funzione per rilevare se è un browser in-app
-const isInAppBrowser = (): boolean => {
-  if (typeof window === "undefined") return false;
-  
-  const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
-  const ua = userAgent.toLowerCase();
-  
-  // Rileva browser in-app comuni
-  const inAppBrowsers = [
-    'tiktok',           // TikTok
-    'instagram',        // Instagram
-    'fban',             // Facebook Android
-    'fbios',            // Facebook iOS
-    'fbav',             // Facebook App Version
-    'line',             // LINE
-    'wechat',           // WeChat
-    'snapchat',         // Snapchat
-    'whatsapp',         // WhatsApp
-    'linkedinapp',      // LinkedIn
-    'twitter',          // Twitter/X
-    'pinterest',        // Pinterest
-    'messenger',        // Facebook Messenger
-    'micromessenger',   // WeChat (alternativo)
-    'wv',               // WebView generico
-  ];
-  
-  // Controlla se è un browser in-app
-  const isInApp = inAppBrowsers.some(browser => ua.includes(browser));
-  
-  // Se è in standalone mode (PWA), non è un browser in-app
-  const isStandalone = (window.navigator as any).standalone === true || 
-                       window.matchMedia('(display-mode: standalone)').matches;
-  
-  if (isStandalone) return false;
-  
-  return isInApp;
-};
-
 // Funzione per rilevare se è un browser standard (Safari, Chrome, o desktop)
 const isStandardBrowser = (): boolean => {
   if (typeof window === "undefined") return false;
@@ -68,16 +30,102 @@ const isStandardBrowser = (): boolean => {
   const isDesktop = !/iphone|ipad|ipod|android/.test(ua);
   if (isDesktop) return true;
   
-  // Rileva Safari iOS
-  const isSafariIOS = /iphone|ipad|ipod/.test(ua) && /safari/.test(ua) && !/crios|fxios/.test(ua);
+  // Rileva Safari iOS - deve avere Safari e non essere un browser in-app
+  const isIOS = /iphone|ipad|ipod/.test(ua);
+  const hasSafari = ua.includes('safari');
+  const isSafariIOS = isIOS && hasSafari && !/crios|fxios/.test(ua) && !ua.includes('wv');
   
-  // Rileva Chrome mobile (Android)
-  const isChromeAndroid = /android/.test(ua) && /chrome/.test(ua) && !/edg/.test(ua);
+  // Rileva Chrome mobile (Android) - deve essere Chrome e non WebView
+  const isAndroid = /android/.test(ua);
+  const hasChrome = ua.includes('chrome');
+  const isChromeAndroid = isAndroid && hasChrome && !/edg/.test(ua) && !ua.includes('wv');
   
   // Rileva Chrome iOS
-  const isChromeIOS = /iphone|ipad|ipod/.test(ua) && /crios/.test(ua);
+  const isChromeIOS = isIOS && /crios/.test(ua);
   
-  return isSafariIOS || isChromeAndroid || isChromeIOS;
+  // Firefox iOS
+  const isFirefoxIOS = isIOS && /fxios/.test(ua);
+  
+  return isSafariIOS || isChromeAndroid || isChromeIOS || isFirefoxIOS;
+};
+
+// Funzione per rilevare se è un browser in-app
+const isInAppBrowser = (): boolean => {
+  if (typeof window === "undefined") return false;
+  
+  const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+  const ua = userAgent.toLowerCase();
+  
+  // Se è in standalone mode (PWA), non è un browser in-app
+  const isStandalone = (window.navigator as any).standalone === true || 
+                       window.matchMedia('(display-mode: standalone)').matches;
+  
+  if (isStandalone) return false;
+  
+  // Se è un browser standard, non è in-app
+  if (isStandardBrowser()) return false;
+  
+  const isMobile = /iphone|ipad|ipod|android/.test(ua);
+  const isIOS = /iphone|ipad|ipod/.test(ua);
+  const isAndroid = /android/.test(ua);
+  
+  // Rileva browser in-app comuni - pattern più specifici
+  const inAppBrowsers = [
+    'tiktok',           // TikTok
+    'musical_ly',       // Musical.ly (predecessore di TikTok)
+    'aweme',            // Aweme (TikTok internamente)
+    'bytedance',        // ByteDance (proprietario di TikTok)
+    'sslocal',          // TikTok (pattern alternativo)
+    'instagram',        // Instagram
+    'fban',             // Facebook Android
+    'fbios',            // Facebook iOS
+    'fbav',             // Facebook App Version
+    'fb_iab',           // Facebook In-App Browser
+    'fb4a',             // Facebook for Android
+    'line',             // LINE
+    'wechat',           // WeChat
+    'snapchat',         // Snapchat
+    'whatsapp',         // WhatsApp
+    'linkedinapp',      // LinkedIn
+    'twitter',          // Twitter/X
+    'pinterest',        // Pinterest
+    'messenger',        // Facebook Messenger
+    'micromessenger',   // WeChat (alternativo)
+  ];
+  
+  // Controlla se è un browser in-app con pattern specifici
+  const isInApp = inAppBrowsers.some(browser => ua.includes(browser));
+  
+  // Controllo aggiuntivo: WebView su mobile (spesso usato da app social)
+  // Se è mobile e contiene "wv" (WebView) ma non è Chrome, probabilmente è in-app
+  const isWebView = ua.includes('wv') && !ua.includes('chrome');
+  
+  // Controllo per TikTok specifico su iOS: spesso usa WebView senza identificarsi chiaramente
+  // TikTok su iOS può avere pattern come "Version/X.X" senza Safari
+  const hasSafari = ua.includes('safari');
+  const isTikTokLikeIOS = isIOS && !hasSafari && !ua.includes('crios') && !ua.includes('fxios') && !ua.includes('version');
+  
+  // Controllo per TikTok su Android: spesso usa WebView Android senza identificarsi
+  const isTikTokLikeAndroid = isAndroid && ua.includes('wv') && !ua.includes('chrome');
+  
+  // Controllo aggiuntivo: se è mobile e non ha pattern di browser standard, potrebbe essere in-app
+  // Questo è un fallback per casi edge come TikTok che non si identificano bene
+  if (isMobile) {
+    // Se ha WebView o pattern TikTok-like, è in-app
+    if (isWebView || isTikTokLikeIOS || isTikTokLikeAndroid) {
+      return true;
+    }
+    
+    // Controllo per iOS: se non ha Safari e non è Chrome/Firefox, potrebbe essere in-app
+    if (isIOS && !hasSafari && !ua.includes('crios') && !ua.includes('fxios')) {
+      // Ma escludiamo se ha "version" che indica Safari standard
+      if (!ua.includes('version')) {
+        return true;
+      }
+    }
+  }
+  
+  return isInApp;
 };
 
 const Download = () => {
